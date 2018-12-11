@@ -18,7 +18,7 @@ const AlertWrapper = styled.div`
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all  0.4s ease-in-out;
-  z-index: 16000003;
+  z-index: 16000004;
   ${props => props.show && {
     display: 'block',
     boxSizing: 'border-box',
