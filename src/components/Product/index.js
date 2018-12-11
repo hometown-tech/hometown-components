@@ -53,6 +53,9 @@ const ProductInner = styled(Div)`
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     padding: 0.25rem 0.625rem 0.25rem;
   }
+  @media (max-width: 320px) {
+    height: 65px;
+  }
 `;
 
 const ImgWrapper = styled.div`
@@ -134,11 +137,18 @@ const DeliveredBySpan = styled(Span)`
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 0.6875rem;
   }
+  @media (max-width: 320px) {
+    font-size: 9px;
+  }
 `;
 
 const DeliveredByWrapper = styled(Div)`
   margin-bottom: 5px;
   margin-top: 5px;
+  @media (max-width: 320px) {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 `;
 
 const SavingOff = styled(Span)`
