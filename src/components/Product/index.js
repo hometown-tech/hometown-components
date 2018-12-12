@@ -8,6 +8,8 @@ import WishlistBtn from 'components/WishlistBtn';
 import ImageShimmer from 'components/ImageShimmer';
 import Img from 'components/Img';
 import Theme from 'components/Theme';
+import ProductWrapper from './ProductWrapper';
+import QuickViewBtn from './QuickView';
 import colorIcon from '../../static/color-swatch.jpg';
 import truck from '../../static/truck.svg';
 
@@ -21,27 +23,6 @@ const ProductImg = styled.img`
   top: 0;
   margin: auto;
   width: 100%;
-`;
-
-const ProductWrapper = styled.div`
-  width: ${props => props.theme.col[props.col]};
-  float: left;
-  position: relative;
-  text-align: left;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  display: initial;
-  box-sizing: border-box;
-  &:hover {
-    button {
-      @media (min-width: ${props => props.theme.breakpoints('md')}) {
-        &:last-child {
-          display: block !important;
-        }
-      }
-    }
-  }
 `;
 
 const ProductInner = styled(Div)`
@@ -63,27 +44,6 @@ const ImgWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   position: relative;
-`;
-
-const QuickViewBtn = styled.button`
-  border-radius: 2px;
-  box-shadow: 2px 2px 1px 0 rgba(214, 214, 214, 0.5);
-  background-color: #ffffff;
-  border: solid 1px #dadada;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 130px;
-  left: calc(50% - 65px);
-  height: 40px;
-  top: calc(50% - 65px);
-  font-size: 0.875rem;
-  transition: 0.3s all ease;
-  display: none;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    display: none !important;
-  }
 `;
 
 const Colors = styled.span`
