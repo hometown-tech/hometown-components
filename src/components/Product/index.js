@@ -105,7 +105,7 @@ const DeliveredBySpan = styled(Span)`
 const DeliveredByWrapper = styled(Div)`
   margin-bottom: 5px;
   margin-top: 5px;
-  @media (max-width: 320px) {
+  @media (max-width: 360px) {
     margin-bottom: 0;
     margin-top: 0;
   }
