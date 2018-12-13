@@ -52,7 +52,7 @@ export default class LoginForm extends Component {
           feedBackError={emailFeedBackError}
           feedBackMessage={emailFeedBackMessage}
         />
-        <Row ml="0" mr="0" mt="1.25rem">
+        <Row ml="0" mr="0" mt="0.625rem">
           <Div col="12" pt="6px">
             <FormInput
               label="Password"
@@ -68,7 +68,7 @@ export default class LoginForm extends Component {
             </ForgotPasswordLink>
           </Div>
         </Row>
-        <Row ml="0" mr="0" mt="1.25rem">
+        <Row ml="0" mr="0" mt="0.625rem">
           <Div col="8" pt="3px">
             <SignUpText color="textDark" mr="0.3126rem">
               Don't have an account?
