@@ -116,6 +116,10 @@ const SavingOff = styled(Span)`
   left: 0;
   bottom: 0;
   background: #d80019;
+  font-size: 10px;
+  @media (max-width: 360px) {
+    font-size: 9px;
+  }
 `;
 
 const handleClick = (dispatcher, position = 0) => () => {
@@ -152,7 +156,6 @@ const Product = props => {
           }
           {saving &&
             <SavingOff
-              fontSize="9px"
               fontFamily="regular"
               color="#FFF"
               p="5px 4px"
