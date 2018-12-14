@@ -9,8 +9,11 @@ import Text from 'components/Text';
 const Description = styled(Text)`
   ol {
     margin-top: 0;
-    padding-left: 15px;
+    padding-left: 0;
     list-style-type: disc;
+  }
+  ul {
+    padding-left: 15px;
   }
 `;
 
@@ -20,11 +23,11 @@ const Spec = ({ spec }) => {
     <Row display="block" m="0" pb="2px">
       <div>
         {label !== 'Care Instructions' && (
-          <Div col="5">
+          <Div col="6">
             <Label color="black" lh="1.6" fontFamily="regular">{label}</Label>
           </Div>
         )}
-        <Div col={label === 'Care Instructions' || label === 'Note' || label === 'Product warranty' ? '12' : '7'}>
+        <Div col={label === 'Care Instructions' || label === 'Note' || label === 'Product warranty' ? '12' : '6'}>
           <Description
             mt="5px"
             mb="5px"

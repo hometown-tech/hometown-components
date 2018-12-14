@@ -114,7 +114,7 @@ const DeliveredByWrapper = styled(Div)`
 const SavingOff = styled(Span)`
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 0;
   background: #d80019;
   font-size: 9px;
 `;
