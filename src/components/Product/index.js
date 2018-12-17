@@ -88,7 +88,7 @@ const PriceSpan = styled(Span)`
 const CutPriceSpan = styled(Span)`
   font-size: 0.75rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.6875rem;
+    font-size: 0.65625rem;
   }
 `;
 
