@@ -32,7 +32,7 @@ const ProductInner = styled(Div)`
     vertical-align: middle;
   }
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    padding: 0.25rem 0.625rem 0.25rem;
+    padding: 0.25rem 0.3125rem;
   }
   @media (max-width: 320px) {
     height: 65px;
