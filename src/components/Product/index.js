@@ -32,7 +32,7 @@ const ProductInner = styled(Div)`
     vertical-align: middle;
   }
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    padding: 0.25rem 0.625rem 0.25rem;
+    padding: 0.25rem 0.3125rem;
   }
   @media (max-width: 320px) {
     height: 65px;
@@ -88,7 +88,7 @@ const PriceSpan = styled(Span)`
 const CutPriceSpan = styled(Span)`
   font-size: 0.75rem;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
-    font-size: 0.6875rem;
+    font-size: 0.65625rem;
   }
 `;
 
@@ -114,7 +114,7 @@ const DeliveredByWrapper = styled(Div)`
 const SavingOff = styled(Span)`
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 0;
   background: #d80019;
   font-size: 9px;
 `;

@@ -31,6 +31,7 @@ const Span = styled.span`
   ${props => props.pl && { paddingLeft: props.pl }}
   ${props => props.display && { display: props.display }}
   ${props => props.lh && { lineHeight: props.lh }}
+  ${props => props.tt && { textTransform: props.tt }}
 
   > * {
     box-sizing: border-box;

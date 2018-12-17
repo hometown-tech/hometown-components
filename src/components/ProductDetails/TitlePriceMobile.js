@@ -47,14 +47,14 @@ const TitlePrice = ({
                 itemProp="priceCurrency"
                 content="INR"
                 color="#f98d29"
-                fontSize="1.2rem"
+                fontSize="1.375rem"
               >₹</Span>
               <Span
                 itemProp="price"
                 va="text-top"
                 content={discPrice.split(',').join('')}
                 color="#f98d29"
-                fontSize="1.2rem"
+                fontSize="1.375rem"
               >{discPrice}</Span>
               {price !== discPrice &&
               <Span
@@ -80,7 +80,7 @@ const TitlePrice = ({
             >
               {price !== discPrice &&
               <Span
-                fontSize="0.8125em"
+                fontSize="0.75rem"
                 color="rgba(0, 0, 0, 0.4)"
                 ml="0"
                 fontFamily="light"

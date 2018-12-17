@@ -8,6 +8,14 @@ import Span from 'components/Span';
 import Section from 'components/Section';
 import Div from 'components/Div';
 import ReactStars from 'react-stars';
+import styled from 'styled-components';
+
+const ReviewWrapper = styled(Div)`
+  right: -11%;
+  top: 18px;
+  width: 45%;
+  position: absolute;
+`;
 
 const TitlePrice = ({
   name, price, discPrice, savingsRs, savingsPercentage, count, ratings, onClickReviews
@@ -17,7 +25,7 @@ const TitlePrice = ({
       <Row display="block" mr="0" ml="0">
         <Heading
           itemProp="name"
-          fontSize="1.25em"
+          fontSize="1.125em"
           color="textDark"
           mb="0"
           mt="0"
@@ -91,10 +99,10 @@ const TitlePrice = ({
               }
             </HeadingH5>
           </Div>
-          <Div col="3" ta="right">
+          <ReviewWrapper col="3" ta="right">
             {ratings !== 0 &&
             <Row display="block" mr="0" ml="0">
-              <Div right="-10px" onClick={onClickReviews}>
+              <Div onClick={onClickReviews}>
                 <ReactStars
                   count={5}
                   className="ratings"
@@ -104,8 +112,6 @@ const TitlePrice = ({
                   edit={false}
                   color2="rgb(255, 215, 0)"
                 />
-              </Div>
-              <Div>
                 <Span
                   className="ratingsCount"
                   fontSize="0.875rem"
@@ -121,7 +127,7 @@ const TitlePrice = ({
               </Div>
             </Row>
             }
-          </Div>
+          </ReviewWrapper>
         </Row>
       </Row>
     </Container>
