@@ -174,6 +174,9 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             ><s>{cutprice}</s></CutPriceSpan>}
+            <Span mt="2px" fontSize="13px" color={Theme.colors.primary} fontFamily="regular" float="right">
+              Combined Offers (3)
+            </Span>
           </Div>
           {deliveredBy && <DeliveredByWrapper>
             <DeliveredBySpan
