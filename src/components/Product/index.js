@@ -181,7 +181,7 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             >
-              {deliveredBy.indexOf('Sorry') !== 0 && <Img
+              {deliveredBy.indexOf('Currently') !== 0 && <Img
                 width="initial"
                 height="18px"
                 mr="0.5rem"
@@ -191,7 +191,7 @@ const Product = props => {
                 float="none"
                 src={truck}
               />}
-              {pincode && deliveredBy.indexOf('Sorry') === 0 ? `Sorry, Undeliverable to ${pincode}` : deliveredBy}
+              {pincode && deliveredBy ? deliveredBy : ''}
             </DeliveredBySpan>
           </DeliveredByWrapper>}
         </ProductInner>
