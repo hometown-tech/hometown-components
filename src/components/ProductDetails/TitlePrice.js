@@ -33,6 +33,7 @@ const TitlePrice = ({
           fontFamily="regular"
           ellipsis={false}
           pb="5px"
+          fontWeight="300"
         >
           {name}
         </Heading>

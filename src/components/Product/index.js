@@ -72,6 +72,7 @@ const Heading = styled.h3`
   margin-top: 0.3125em;
   margin-bottom: 0;
   padding-bottom: 6px;
+  font-weight: 500;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 11px;
     color: #656565;
