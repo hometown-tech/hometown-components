@@ -23,6 +23,7 @@ ul {
   li {
     font-size: 14px;
     margin-bottom: 5px;
+    font-family: light;
     @media (max-width: ${props => props.theme.breakpoints('sm')}) {
       font-size: 12px;
     }
