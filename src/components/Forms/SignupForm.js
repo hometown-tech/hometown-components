@@ -99,7 +99,7 @@ SignupForm.defaultProps = {
   onSubmitSignup: () => {},
   loading: false,
   loginUrl: '',
-  phonemandatory: false,
+  phonemandatory: true,
 };
 
 SignupForm.propTypes = {

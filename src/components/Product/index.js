@@ -72,6 +72,7 @@ const Heading = styled.h3`
   margin-top: 0.3125em;
   margin-bottom: 0;
   padding-bottom: 6px;
+  font-weight: 500;
   @media (max-width: ${props => props.theme.breakpoints('sm')}) {
     font-size: 11px;
     color: #656565;
@@ -174,6 +175,9 @@ const Product = props => {
               fontFamily="regular"
               color={Theme.colors.prodText}
             ><s>{cutprice}</s></CutPriceSpan>}
+            {/* <Span mt="2px" fontSize="13px" color={Theme.colors.primary} fontFamily="regular" float="right">
+              Combined Offers (3)
+            </Span> */}
           </Div>
           {deliveredBy && <DeliveredByWrapper>
             <DeliveredBySpan

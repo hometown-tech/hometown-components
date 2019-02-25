@@ -8,7 +8,7 @@ const defaultImage = require('../../static/placeholder.jpg');
 const ImagePlaceHolderWrapper = styled.div`
   height: ${props => props.height};
   position: relative;
-  overflow: auto;
+  ${props => props.overflow && { overflow: props.overflow }}
   ${props => props.width && { width: props.width }}
 `;
 
@@ -75,13 +75,15 @@ export default class ImageShimmer extends Component {
   }
 
   render() {
-    const { children, src, height } = this.props;
+    const {
+      children, src, height, overflow
+    } = this.props;
     const { isLoaded, error } = this.state;
     if (!children || typeof children !== 'function') {
       throw new Error('ImageShimmer requires a function as its only child');
     }
     return (
-      <ImagePlaceHolderWrapper height={height}>
+      <ImagePlaceHolderWrapper overflow={overflow} height={height}>
         { !isLoaded && !error && <ImagePlaceHolder /> }
         { isLoaded && children(src, error) }
         { !isLoaded && error && children(defaultImage, error) }
@@ -89,3 +91,11 @@ export default class ImageShimmer extends Component {
     );
   }
 }
+
+ImageShimmer.defaultProps = {
+  overflow: 'auto'
+};
+
+ImageShimmer.propTypes = {
+  overflow: PropTypes.string
+};
