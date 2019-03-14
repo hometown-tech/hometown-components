@@ -28,6 +28,7 @@ const AlertContent = ({ type, msg }) => (
         x="0px"
         y="0px"
         width="32px"
+        height="32px"
         viewBox="0 0 24 24"
         enableBackground="new 0 0 24 24"
         fill="#4CAF50"
