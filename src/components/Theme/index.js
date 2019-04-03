@@ -3,10 +3,11 @@
 // breakpoint values
 const breakpoints = val => {
   const breakpointsVal = {
-    xs: '36em',
-    sm: '48em',
-    md: '62em',
-    lg: '75em'
+    xs: '36rem',
+    sm: '47.9375rem',
+    md: '61.9375rem',
+    lg: '64.0625rem',
+    xl: '75rem',
   };
 
   return breakpointsVal[val];

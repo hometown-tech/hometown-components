@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import GetMarginPadding from '../Common/GetMarginPadding';
+import GetFontProps from '../Common/GetFontProps';
+import GetDisplayProps from '../Common/GetDisplayProps';
 
 const Heading = styled.h6`
   ${props => props.ellipsis && {
@@ -7,26 +10,9 @@ const Heading = styled.h6`
     textOverflow: 'ellipsis'
   }}
 
-  font-size: ${props => props.fontSize};
-  font-family: ${props => props.fontFamily};
-  line-height: ${props => props.lh};
-  color: ${props => props.theme.colors[props.color]};
-
-  ${props => props.m && { margin: props.m }}
-  ${props => props.mt && { marginTop: props.mt }}
-  ${props => props.mr && { marginRight: props.mr }}
-  ${props => props.mb && { marginBottom: props.mb }}
-  ${props => props.ml && { marginLeft: props.ml }}
-  ${props => props.p && { padding: props.p }}
-  ${props => props.pt && { paddingTop: props.pt }}
-  ${props => props.pr && { paddingRight: props.pr }}
-  ${props => props.pb && { paddingBottom: props.pb }}
-  ${props => props.pl && { paddingLeft: props.pl }}
-  ${props => props.ls && { letterSpacing: props.ls }}
-  ${props => props.ta && { textAlign: props.ta }}
-  ${props => props.tt && { textTransform: props.tt }}
-  ${props => props.fontWeight && { fontWeight: props.fontWeight }}
-  ${props => props.display && { display: props.display }}
+  ${GetFontProps}
+  ${GetMarginPadding}
+  ${GetDisplayProps}
 `;
 
 Heading.defaultProps = {
