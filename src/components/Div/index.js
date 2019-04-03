@@ -6,6 +6,7 @@ import GetAlignItemsProps from '../Common/GetAlignItemsProps';
 import GetHeightProps from '../Common/GetHeightProps';
 
 const display = (props, type, col) => {
+  console.log(typeof col);
   const typeObj = {
     block: {
       width: `${props.theme.col[col]}`,
@@ -21,8 +22,7 @@ const display = (props, type, col) => {
       flexBasis: 0,
       flexGrow: 1,
       maxWidth: '100%',
-      width: '100%',
-      display: 'flex'
+      width: '100%'
     },
     none: {
       display: 'none'
@@ -34,20 +34,21 @@ const display = (props, type, col) => {
 
 const Div = styled.div`
   position: relative;
-  display: ${props => props.hide ? 'none' : 'initial'};
 
-  ${props => display(props, props.display, typeof props.col === 'string' ? props.col : props.col.lg)};
+  ${props => display(props, props.display, (typeof props.col === 'object' ? props.col.lg : props.col))};
 
   @media only screen 
   and (min-width: ${props => props.theme.breakpoints('sm')}) 
   and (max-width: ${props => props.theme.breakpoints('md')}) {
-    ${props => props.col && display(props, props.display, typeof props.col === 'string' ? props.col : props.col.sm)};
-  }
+    ${props => props.col &&
+      display(props, props.display, (typeof props.col === 'object' ? props.col.sm : props.col))
+}}
   @media only screen 
   and (min-width: ${props => props.theme.breakpoints('md')}) 
   and (max-width: ${props => props.theme.breakpoints('lg')}) {
-    ${props => props.col && display(props, props.display, typeof props.col === 'string' ? props.col : props.col.md)};
-  }
+    ${props => props.col &&
+    display(props, props.display, (typeof props.col === 'object' ? props.col.md : props.col))
+}}
 
   ${props => props.bg && { background: props.bg }}
   ${props => props.ta && { textAlign: props.ta }}
@@ -58,7 +59,9 @@ const Div = styled.div`
   ${GetAlignItemsProps}
   ${GetHeightProps}
 
+  display: ${props => props.hide ? 'none' : 'initial'};
   ${props => props.right && { right: props.right }}
+  ${props => props.flexDisplay && { display: props.flexDisplay }}
 
   box-sizing: border-box;
   > *, ::after, ::before {
@@ -68,8 +71,9 @@ const Div = styled.div`
 
 Div.defaultProps = {
   display: 'block',
-  col: { sm: '12', md: '12', lg: '12' },
-  hide: false
+  col: 12,
+  hide: false,
+  flexDisplay: 'initial'
 };
 
 export default Div;
