@@ -46,6 +46,7 @@ module.exports = {
     'Forms/FormInput': './src/components/Forms/FormInput',
     'Forms/FeedBackForm': './src/components/Forms/FeedBackForm',
     'Forms/ServiceRequestForm': './src/components/Forms/ServiceRequestForm',
+    'Forms/CaseRequestForm': './src/components/Forms/CaseRequestForm',
     'ProductDetails/ColorOption': './src/components/ProductDetails/ColorOption',
     'ProductDetails/ProductDesc': './src/components/ProductDetails/ProductDesc',
     'ProductDetails/ServiceDetails': './src/components/ProductDetails/ServiceDetails',
