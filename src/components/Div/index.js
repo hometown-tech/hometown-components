@@ -6,7 +6,6 @@ import GetAlignItemsProps from '../Common/GetAlignItemsProps';
 import GetHeightProps from '../Common/GetHeightProps';
 
 const display = (props, type, col) => {
-  console.log(typeof col);
   const typeObj = {
     block: {
       width: `${props.theme.col[col]}`,
