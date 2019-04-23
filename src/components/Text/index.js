@@ -8,6 +8,7 @@ const Text = styled.p`
   line-height: ${props => props.lh};
 
   ${props => props.fontFamily && { fontFamily: props.fontFamily }}
+  ${props => props.whiteSpace && { whiteSpace: props.whiteSpace }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
