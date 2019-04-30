@@ -168,7 +168,7 @@ const Product = props => {
               {saving.replace('-', '')} OFF
             </SavingOff>
           }
-          {moneyBackOffer !== '1' &&
+          {moneyBackOffer !== '0' &&
           <ComboOfferRibbon
             fontFamily="regular"
             color="#FFF"
