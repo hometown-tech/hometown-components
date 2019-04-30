@@ -119,6 +119,14 @@ const SavingOff = styled(Span)`
   font-size: 9px;
 `;
 
+const ComboOfferRibbon = styled(Span)`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #28a745;
+  font-size: 10px;
+`;
+
 const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
@@ -126,7 +134,7 @@ const Product = props => {
   const {
     name, image, price, cutprice, saving, sku,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
-    position, setProductPosition, productURL, simpleSku, pincode
+    position, setProductPosition, productURL, simpleSku, pincode, moneyBackOffer
   } = props;
   return (
     <ProductWrapper col={col}>
@@ -145,7 +153,7 @@ const Product = props => {
               width="100%"
             />)}
           </ImageShimmer>
-          { colors &&
+          {colors &&
           <Colors>
             <img src={colorIcon} alt="" />
             {colors}
@@ -159,6 +167,15 @@ const Product = props => {
             >
               {saving.replace('-', '')} OFF
             </SavingOff>
+          }
+          {moneyBackOffer !== '0' &&
+          <ComboOfferRibbon
+            fontFamily="regular"
+            color="#FFF"
+            p="5px 4px"
+          >
+            Money Back offer
+          </ComboOfferRibbon>
           }
         </ImgWrapper>
         <ProductInner p="0.25rem 0.3125rem 0.25rem">
@@ -215,6 +232,7 @@ Product.propTypes = {
   price: PropTypes.string.isRequired,
   cutprice: PropTypes.string.isRequired,
   saving: PropTypes.string.isRequired,
+  moneyBackOffer: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
   isWishList: PropTypes.bool,
