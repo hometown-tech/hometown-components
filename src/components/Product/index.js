@@ -178,7 +178,7 @@ const Product = props => {
             color="#FFF"
             p="5px 4px"
           >
-            MoneyBack offer
+            Moneyback Offer
           </ComboOfferRibbon>
           }
         </ImgWrapper>
