@@ -21,7 +21,7 @@ const SpecHeading = styled.h4`
   font-size: 0.875rem;
   font-family: regular;
   line-height: 1;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0,0.6);
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;

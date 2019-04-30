@@ -14,6 +14,9 @@ const Description = styled(Text)`
   }
   ul {
     padding-left: 15px;
+    li {
+      font-family: light;
+    }
   }
 `;
 
@@ -24,7 +27,7 @@ const Spec = ({ spec }) => {
       <div>
         {label !== 'Care Instructions' && (
           <Div col="6">
-            <Label color="black" lh="1.6" fontFamily="regular">{label}</Label>
+            <Label color="secondary" lh="1.6" fontFamily="regular">{label}</Label>
           </Div>
         )}
         <Div col={label === 'Care Instructions' || label === 'Note' || label === 'Product warranty' ? '12' : '6'}>
@@ -35,7 +38,8 @@ const Spec = ({ spec }) => {
             fontSize="0.875rem"
             dangerouslySetInnerHTML={{ __html: value }}
             lh="1.6"
-            color="rgba(0, 0, 0, 0.6)"
+            color="rgba(0, 0, 0, 0.65)"
+            fontFamily="light"
           />
         </Div>
       </div>

@@ -44,7 +44,7 @@ export default class LoginForm extends Component {
     return (
       <form onSubmit={onSubmitLogin}>
         <FormInput
-          label="Email ID"
+          label="Email ID *"
           type="text"
           placeholder=""
           onChange={onChangeEmail}
@@ -55,7 +55,7 @@ export default class LoginForm extends Component {
         <Row ml="0" mr="0" mt="0.625rem">
           <Div col="12" pt="6px">
             <FormInput
-              label="Password"
+              label="Password *"
               type="password"
               placeholder=""
               onChange={onChangePassword}
