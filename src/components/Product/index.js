@@ -125,6 +125,10 @@ const ComboOfferRibbon = styled(Span)`
   bottom: 0;
   background: #f98d29;
   font-size: 10px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 8px;
+    padding: 6px 4px;
+  }
 `;
 
 const handleClick = (dispatcher, position = 0) => () => {
@@ -168,7 +172,7 @@ const Product = props => {
               {saving.replace('-', '')} OFF
             </SavingOff>
           }
-          {moneyBackOffer !== '0' &&
+          {moneyBackOffer !== '1' &&
           <ComboOfferRibbon
             fontFamily="regular"
             color="#FFF"
