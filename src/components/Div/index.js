@@ -40,7 +40,7 @@ const Div = styled.div`
   and (min-width: ${props => props.theme.breakpoints('sm')}) 
   and (max-width: ${props => props.theme.breakpoints('md')}) {
     ${props => props.col &&
-      display(props, props.display, (typeof props.col === 'object' ? props.col.sm : props.col))
+    display(props, props.display, (typeof props.col === 'object' ? props.col.sm : props.col))
 }}
   @media only screen 
   and (min-width: ${props => props.theme.breakpoints('md')}) 

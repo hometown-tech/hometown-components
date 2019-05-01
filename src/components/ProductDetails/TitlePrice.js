@@ -25,7 +25,7 @@ const TitlePrice = ({
       <Row display="block" mr="0" ml="0">
         <Heading
           itemProp="name"
-          fontSize="1.125em"
+          fontSize={{ sm: '16px', md: '16px', lg: '1.125em' }}
           color="textDark"
           mb="0"
           mt="0"
