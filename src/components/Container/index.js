@@ -19,7 +19,7 @@ const Container = styled.div`
     max-width: ${props => props.type === 'cf' ? '100%' : '540px'};
   }
   @media (min-width: ${props => props.theme.breakpoints('sm')}) {
-    max-width: ${props => props.type === 'cf' ? '100%' : '740px'};
+    max-width: ${props => props.type === 'cf' ? '100%' : '720px'};
   }
   @media (min-width: ${props => props.theme.breakpoints('md')}) {
     max-width: ${props => props.type === 'cf' ? '100%' : '960px'};

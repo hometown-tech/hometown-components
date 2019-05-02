@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import GetMarginPadding from '../Common/GetMarginPadding';
+import GetHeightProps from '../Common/GetHeightProps';
 
 const sizes = {
   default: {
@@ -76,18 +78,9 @@ const Button = styled.button`
   ${props => btnType(props, props.btnType)};
 
   ${props => props.fontSize && { fontSize: props.fontSize }}
-  ${props => props.height && { height: props.height }}
   ${props => props.width && { width: props.width }}
-  ${props => props.m && { margin: props.m }}
-  ${props => props.mt && { marginTop: props.mt }}
-  ${props => props.mr && { marginRight: props.mr }}
-  ${props => props.mb && { marginBottom: props.mb }}
-  ${props => props.ml && { marginLeft: props.ml }}
-  ${props => props.p && { padding: props.p }}
-  ${props => props.pt && { paddingTop: props.pt }}
-  ${props => props.pr && { paddingRight: props.pr }}
-  ${props => props.pb && { paddingBottom: props.pb }}
-  ${props => props.pl && { paddingLeft: props.pl }}
+  ${GetHeightProps}
+  ${GetMarginPadding}
   ${props => props.fl && { float: props.fl }}
   ${props => props.ls && { letterSpacing: props.ls }}
   ${props => props.tt && { textTransform: props.tt }}

@@ -88,8 +88,9 @@ class WriteReview extends React.Component {
             fontSize="0.875rem"
             lh="1"
             p="0.75rem 1rem"
-            ml={{ sm: '0', md: '0', lg: '0.625rem' }}
+            ml={{ sm: '0', md: '0.625rem', lg: '0.625rem' }}
             mt={{ sm: '0.625rem', md: '0', lg: '0' }}
+            mb={{ sm: '0.625rem', md: '0', lg: '0' }}
             className="btn-primary"
           >Write a Review</WriteReviewBtn>
           {(addreview) &&
