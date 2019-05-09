@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import GetMarginPadding from '../Common/GetMarginPadding';
 import GetHeightProps from '../Common/GetHeightProps';
 import GetWidthProps from '../Common/GetWidthProps';
+import GetPositions from '../Common/GetPositions';
 
 const Img = styled.img`
   max-width: 100%;
@@ -15,10 +16,10 @@ const Img = styled.img`
   ${GetMarginPadding}
   ${GetHeightProps}
   ${GetWidthProps}
+  ${GetPositions}
 
   ${props => props.border && { border: props.border }}
   ${props => props.position && { position: props.position }}
-  ${props => props.top && { top: props.top }}
 `;
 
 Img.defaultProps = {

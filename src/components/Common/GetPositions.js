@@ -10,28 +10,28 @@ const GetPositions = css`
   @media only screen 
   and (min-width: ${props => props.theme.breakpoints('sm')}) 
   and (max-width: ${props => props.theme.breakpoints('md')}) {
-    ${props => props.zIndex.sm && { zIndex: props.zIndex.sm }}
-    ${props => props.top.sm && { top: props.top.sm }}
-    ${props => props.bottom.sm && { bottom: props.bottom.sm }}
-    ${props => props.left.sm && { left: props.left.sm }}
-    ${props => props.right.sm && { right: props.right.sm }}
+    ${props => props.zIndex && { zIndex: props.zIndex.sm }}
+    ${props => props.top && { top: props.top.sm }}
+    ${props => props.bottom && { bottom: props.bottom.sm }}
+    ${props => props.left && { left: props.left.sm }}
+    ${props => props.right && { right: props.right.sm }}
   }
   @media only screen 
   and (min-width: ${props => props.theme.breakpoints('md')}) 
   and (max-width: ${props => props.theme.breakpoints('lg')}) {
-    ${props => props.zIndex.md && { zIndex: props.zIndex.md }}
-    ${props => props.top.md && { top: props.top.md }}
-    ${props => props.bottom.md && { bottom: props.bottom.md }}
-    ${props => props.left.md && { left: props.left.md }}
-    ${props => props.right.md && { right: props.right.md }}
+    ${props => props.zIndex && { zIndex: props.zIndex.md }}
+    ${props => props.top && { top: props.top.md }}
+    ${props => props.bottom && { bottom: props.bottom.md }}
+    ${props => props.left && { left: props.left.md }}
+    ${props => props.right && { right: props.right.md }}
   }
   @media only screen 
   and (min-width: ${props => props.theme.breakpoints('lg')}) {
-    ${props => props.zIndex.lg && { zIndex: props.zIndex.lg }}
-    ${props => props.top.lg && { top: props.top.lg }}
-    ${props => props.bottom.lg && { bottom: props.bottom.lg }}
-    ${props => props.left.lg && { left: props.left.lg }}
-    ${props => props.right.lg && { right: props.right.lg }}
+    ${props => props.zIndex && { zIndex: props.zIndex.lg }}
+    ${props => props.top && { top: props.top.lg }}
+    ${props => props.bottom && { bottom: props.bottom.lg }}
+    ${props => props.left && { left: props.left.lg }}
+    ${props => props.right && { right: props.right.lg }}
   }
 `;
 
