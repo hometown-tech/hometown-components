@@ -139,7 +139,7 @@ const Product = props => {
   const {
     name, image, price, cutprice, saving, sku,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
-    position, setProductPosition, productURL, simpleSku, pincode, moneyBackOffer
+    position, setProductPosition, productURL, simpleSku, pincode, moneyBackOffer, comboOffer
   } = props;
   return (
     <ProductWrapper col={col}>
@@ -180,6 +180,15 @@ const Product = props => {
             p="5px 4px"
           >
             Moneyback Offer
+          </ComboOfferRibbon>
+          }
+          {comboOffer !== '' && comboOffer !== '0' && moneyBackOffer !== '1' &&
+          <ComboOfferRibbon
+            fontFamily="regular"
+            color="#FFF"
+            p="5px 4px"
+          >
+            {comboOffer}
           </ComboOfferRibbon>
           }
         </ImgWrapper>
@@ -232,7 +241,8 @@ Product.defaultProps = {
   onOpenQuickViewModal: () => {},
   colors: '',
   imgHeight: '270px',
-  pincode: null
+  pincode: null,
+  comboOffer: ''
 };
 
 Product.propTypes = {
@@ -241,6 +251,7 @@ Product.propTypes = {
   cutprice: PropTypes.string.isRequired,
   saving: PropTypes.string.isRequired,
   moneyBackOffer: PropTypes.string.isRequired,
+  comboOffer: PropTypes.string,
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
   isWishList: PropTypes.bool,
