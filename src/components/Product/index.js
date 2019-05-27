@@ -120,6 +120,18 @@ const SavingOff = styled(Span)`
   font-size: 9px;
 `;
 
+const ComboOfferRibbon = styled(Span)`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #f98d29;
+  font-size: 10px;
+  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    font-size: 8px;
+    padding: 6px 4px;
+  }
+`;
+
 const handleClick = (dispatcher, position = 0) => () => {
   dispatcher(position + 1);
 };
@@ -127,7 +139,7 @@ const Product = props => {
   const {
     name, image, price, cutprice, saving, sku,
     onClick, isWishList, col, skuLoading, onOpenQuickViewModal, deliveredBy, colors, imgHeight,
-    position, setProductPosition, productURL, simpleSku, pincode
+    position, setProductPosition, productURL, simpleSku, pincode, moneyBackOffer, comboOffer
   } = props;
   return (
     <ProductWrapper col={col}>
@@ -146,7 +158,7 @@ const Product = props => {
               width="100%"
             />)}
           </ImageShimmer>
-          { colors &&
+          {colors &&
           <Colors>
             <img src={colorIcon} alt="" />
             {colors}
@@ -160,6 +172,24 @@ const Product = props => {
             >
               {saving.replace('-', '')} OFF
             </SavingOff>
+          }
+          {moneyBackOffer === '1' &&
+          <ComboOfferRibbon
+            fontFamily="regular"
+            color="#FFF"
+            p="5px 4px"
+          >
+            Moneyback Offer
+          </ComboOfferRibbon>
+          }
+          {comboOffer !== '' && comboOffer !== '0' && moneyBackOffer !== '1' &&
+          <ComboOfferRibbon
+            fontFamily="regular"
+            color="#FFF"
+            p="5px 4px"
+          >
+            {comboOffer}
+          </ComboOfferRibbon>
           }
         </ImgWrapper>
         <ProductInner p="0.25rem 0.3125rem 0.25rem">
@@ -211,7 +241,8 @@ Product.defaultProps = {
   onOpenQuickViewModal: () => {},
   colors: '',
   imgHeight: { sm: '234px', md: '314px', lg: '270px' },
-  pincode: null
+  pincode: null,
+  comboOffer: ''
 };
 
 Product.propTypes = {
@@ -219,6 +250,8 @@ Product.propTypes = {
   price: PropTypes.string.isRequired,
   cutprice: PropTypes.string.isRequired,
   saving: PropTypes.string.isRequired,
+  moneyBackOffer: PropTypes.string.isRequired,
+  comboOffer: PropTypes.string,
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
   isWishList: PropTypes.bool,
