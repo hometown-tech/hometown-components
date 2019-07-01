@@ -75,6 +75,14 @@ const TitlePrice = ({
                 lh="2.2"
               >₹{price}</Span>
               }
+              <Span
+                fontSize="0.75rem"
+                color="rgba(0, 0, 0, 0.4)"
+                ml="10px"
+                fontFamily="regular"
+                va="text-top"
+                lh="2.2"
+              >(Inc. of all taxes)</Span>
             </HeadingH5>
             <HeadingH5
               itemScope
