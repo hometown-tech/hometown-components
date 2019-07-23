@@ -19,10 +19,10 @@ const Reviews = ({ reviewItems, col, pr }) => {
     >
       <Container type="container" pl="1rem" pr="1rem">
         <HeadingH6
-          mb="1rem"
           mt="0"
           color="textLight"
-          fontSize="1em"
+          fontSize={{ sm: '1em', md: '1em', lg: '1em' }}
+          mb={{ sm: '0.625rem', md: '1rem', lg: '1rem' }}
           fontFamily="light"
         >
           Reviews
@@ -44,7 +44,7 @@ Reviews.defaultProps = {
 
 Reviews.propTypes = {
   reviewItems: PropTypes.array.isRequired,
-  col: PropTypes.string,
+  col: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.any), PropTypes.number, PropTypes.string]),
   pr: PropTypes.string
 };
 

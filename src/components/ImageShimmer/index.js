@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ImagePlaceHolder from 'components/Placeholders/ImagePlaceHolder';
+import GetHeightProps from '../Common/GetHeightProps';
+import GetWidthProps from '../Common/GetWidthProps';
 
 const defaultImage = require('../../static/placeholder.jpg');
 
 const ImagePlaceHolderWrapper = styled.div`
-  height: ${props => props.height};
   position: relative;
   ${props => props.overflow && { overflow: props.overflow }}
-  ${props => props.width && { width: props.width }}
+  ${GetHeightProps}
+  ${GetWidthProps}
 `;
 
 export default class ImageShimmer extends Component {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import GetFlexWrapProps from '../Common/GetFlexWrapProps';
 
 const display = (props, type) => {
   const typeObj = {
@@ -35,6 +36,8 @@ const Row = styled.div`
   ${props => props.pr && { paddingRight: props.pr }}
   ${props => props.pb && { paddingBottom: props.pb }}
   ${props => props.pl && { paddingLeft: props.pl }}
+
+  ${GetFlexWrapProps}
 
   &:before, &:after {
     box-sizing: border-box;

@@ -240,7 +240,7 @@ Product.defaultProps = {
   skuLoading: false,
   onOpenQuickViewModal: () => {},
   colors: '',
-  imgHeight: '270px',
+  imgHeight: { sm: '234px', md: '314px', lg: '270px' },
   pincode: null,
   comboOffer: ''
 };
