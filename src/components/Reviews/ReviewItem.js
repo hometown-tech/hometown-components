@@ -51,7 +51,8 @@ const ReviewsItems = ({ review, col, pr }) =>
           className="ratingsCount"
           fontSize="0.875rem"
           color="rgba(0, 0, 0, 0.6)"
-          va="text-bottom"
+          va="super"
+          ml="5px"
         >({review.options[0].option_value || null})</Span>
       </Div>
       <Div>
