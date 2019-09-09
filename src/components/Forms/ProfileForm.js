@@ -41,6 +41,7 @@ export default class ProfileForm extends Component {
           feedBackMessage={fullNameFeedBackMessage}
         />
         <FormInput
+          style={{ backgroundColor: '#cccccc38' }}
           label="Email ID"
           type="text"
           placeholder=""
@@ -51,6 +52,8 @@ export default class ProfileForm extends Component {
           readOnly
         />
         <FormInput
+          style={{ backgroundColor: '#cccccc38' }}
+          readonly
           label="Phone"
           type="text"
           placeholder=""
@@ -74,7 +77,7 @@ export default class ProfileForm extends Component {
           fontFamily="regular"
           height="42px"
           mt="1.5rem"
-          disabled={loading}
+          disabled={loading || fullNameFeedBackError || emailFeedBackError || phoneFeedBackError || gstFeedBackError}
         >
           {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
         </Button>
