@@ -53,7 +53,7 @@ export default class ProfileForm extends Component {
         />
         <FormInput
           style={{ backgroundColor: '#cccccc38' }}
-          readonly
+          readOnly
           label="Phone"
           type="text"
           placeholder=""
