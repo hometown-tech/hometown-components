@@ -25,12 +25,21 @@ const Spec = ({ spec }) => {
   return (
     <Row display="block" m="0" pb="2px">
       <div>
-        {label !== 'Care Instructions' && (
+        {label !== 'Care Instructions' &&
+        label !== 'Returns / Cancellation' &&
+        label !== 'Service Assurance / Warranty' && (
           <Div col="6">
             <Label color="secondary" lh="1.6" fontFamily="regular">{label}</Label>
           </Div>
         )}
-        <Div col={label === 'Care Instructions' || label === 'Note' || label === 'Product warranty' ? '12' : '6'}>
+        <Div
+          col={
+            label === 'Care Instructions' ||
+            label === 'Note' ||
+            label === 'Service Assurance / Warranty' ||
+            label === 'Returns / Cancellation' ? '12' : '6'
+          }
+        >
           <Description
             mt="5px"
             mb="5px"
