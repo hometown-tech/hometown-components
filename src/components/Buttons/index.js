@@ -49,7 +49,12 @@ const btnType = (props, type) => {
       color: `${props.color}`,
       border: 'none',
       background: 'none'
-    }
+    },
+    bulkOrderSubmit: {
+      color: `${props.theme.colors.white}`,
+      backgroundColor: `${props.theme.colors.bulkorderUspBg}`,
+      borderColor: `${props.theme.colors.bulkorderUspBg}`
+    },
   };
 
   return typeObj[type];

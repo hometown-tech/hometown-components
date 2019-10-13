@@ -70,7 +70,8 @@ const colors = {
     '#495057',
     '#343a40',
     '#212529'
-  ]
+  ],
+  bulkorderUspBg: '#6d6d6d'
 };
 
 // sizes is used for margin and padding scales
