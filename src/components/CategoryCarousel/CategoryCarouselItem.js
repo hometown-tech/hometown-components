@@ -87,9 +87,30 @@ const RoundImg = styled.img`
 
 const CategoryCarouselItem = ({
   image, name, url, typeOfSlider, colSize, layout
-}) => (
-  <ProductCarouselLi className={typeOfSlider} colSize={colSize} layout={layout}>
-    <HyperLink to={url}>
+}) => {
+  if (url) {
+    return (
+      <ProductCarouselLi className={typeOfSlider} colSize={colSize} layout={layout}>
+        <HyperLink to={url}>
+          <ImageShimmer src={image} minHeight="365">
+            {imageURL => (
+              layout === 'square' ?
+                <Img mb="5px" src={imageURL} alt={name} />
+                : <RoundImg src={imageURL} alt={name} />
+            )}
+          </ImageShimmer>
+          {layout === 'square' ?
+            <Div ta="left">
+              <CatTitle>{name}</CatTitle>
+            </Div> :
+            <CatRoundTitle>{name}</CatRoundTitle>
+          }
+        </HyperLink>
+      </ProductCarouselLi>
+    );
+  }
+  return (
+    <ProductCarouselLi className={typeOfSlider} colSize={colSize} layout={layout}>
       <ImageShimmer src={image} minHeight="365">
         {imageURL => (
           layout === 'square' ?
@@ -103,9 +124,9 @@ const CategoryCarouselItem = ({
         </Div> :
         <CatRoundTitle>{name}</CatRoundTitle>
       }
-    </HyperLink>
-  </ProductCarouselLi>
-);
+    </ProductCarouselLi>
+  );
+};
 
 CategoryCarouselItem.defaultProps = {
   colSize: '100%',
