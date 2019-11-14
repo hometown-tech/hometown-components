@@ -10,6 +10,10 @@ export default class ProfileForm extends Component {
       email,
       phone,
       fullName,
+      gst,
+      gstFeedBackError,
+      gstFeedBackMessage,
+      onChangeGST,
       onChangeEmail,
       onChangePhone,
       onChangeFullName,
@@ -37,6 +41,7 @@ export default class ProfileForm extends Component {
           feedBackMessage={fullNameFeedBackMessage}
         />
         <FormInput
+          style={{ backgroundColor: '#cccccc38' }}
           label="Email ID"
           type="text"
           placeholder=""
@@ -47,6 +52,8 @@ export default class ProfileForm extends Component {
           readOnly
         />
         <FormInput
+          style={{ backgroundColor: '#cccccc38' }}
+          readOnly
           label="Phone"
           type="text"
           placeholder=""
@@ -55,13 +62,22 @@ export default class ProfileForm extends Component {
           feedBackError={phoneFeedBackError}
           feedBackMessage={phoneFeedBackMessage}
         />
+        <FormInput
+          label="GST Number"
+          type="text"
+          placeholder=""
+          onChange={onChangeGST}
+          value={gst}
+          feedBackError={gstFeedBackError}
+          feedBackMessage={gstFeedBackMessage}
+        />
         <Button
           size="block"
           btnType="primary"
           fontFamily="regular"
           height="42px"
           mt="1.5rem"
-          disabled={loading}
+          disabled={loading || fullNameFeedBackError || emailFeedBackError || phoneFeedBackError || gstFeedBackError}
         >
           {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
         </Button>
@@ -90,6 +106,9 @@ ProfileForm.defaultProps = {
   email: '',
   phone: '',
   fullName: '',
+  gst: '',
+  gstFeedBackError: false,
+  gstFeedBackMessage: '',
   emailFeedBackError: false,
   emailFeedBackMessage: '',
   phoneFeedBackError: false,
@@ -97,6 +116,7 @@ ProfileForm.defaultProps = {
   fullNameFeedBackError: false,
   fullNameFeedBackMessage: '',
   onChangeEmail: () => {},
+  onChangeGST: () => {},
   onChangePhone: () => {},
   onChangeFullName: () => {},
   onSubmitProfile: () => {},
@@ -108,9 +128,13 @@ ProfileForm.propTypes = {
   onChangePhone: PropTypes.func,
   onChangeFullName: PropTypes.func,
   onSubmitProfile: PropTypes.func,
+  onChangeGST: PropTypes.func,
   email: PropTypes.string,
   phone: PropTypes.string,
   fullName: PropTypes.string,
+  gst: PropTypes.string,
+  gstFeedBackError: PropTypes.bool,
+  gstFeedBackMessage: PropTypes.string,
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
   phoneFeedBackError: PropTypes.bool,

@@ -60,7 +60,7 @@ export default class UpdateProfileForm extends Component {
           fontFamily="regular"
           height="42px"
           mt="1.5rem"
-          disabled={loading}
+          disabled={loading || oldPwdFeedBackError || newPwdFeedBackError || confirmPwdFeedBackError}
         >
           {(response && !loading) ? 'UPDATE PASSWORD' : 'Please wait...' }
         </Button>
