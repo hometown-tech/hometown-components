@@ -76,6 +76,7 @@ module.exports = {
 
     // New Components
     'AbsoluteHtV1/index': './src/newComponents/AbsoluteHtV1/',
+    'BodyHtV1/index': './src/newComponents/BodyHtV1/',
     'BoxHtV1/index': './src/newComponents/BoxHtV1/',
     'ColHtV1/index': './src/newComponents/ColHtV1/',
     'ContainerHtV1/index': './src/newComponents/ContainerHtV1/',
@@ -85,6 +86,7 @@ module.exports = {
     'RowHtV1/index': './src/newComponents/RowHtV1/',
     'ThemeHtV1/index': './src/newComponents/ThemeHtV1/',
     'ThemeProviderHtV1/index': './src/newComponents/ThemeProviderHtV1/',
+    'WrapperHtV1/index': './src/newComponents/WrapperHtV1/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
