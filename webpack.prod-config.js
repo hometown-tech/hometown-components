@@ -73,6 +73,10 @@ module.exports = {
     'Extend/index': './src/components/Extend/',
     'LoadMore/index': './src/components/LoadMore/',
     'Callus/index': './src/components/Callus/',
+    // New Components
+    'ThemeHtV1/index': './src/newComponents/ThemeNew/',
+    'ColHtV1/index': './src/newComponents/Col/',
+    'RowHtV1/index': './src/newComponents/Row/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

@@ -12,6 +12,10 @@
     "release": "np"
   },
   "author": "HomeTown.in",
+  "contributors": [
+    "Ankit Patel <ankit.patel@hometown.in>",
+    "Sanjeev <sanjeev@hometown.in>"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.0",
@@ -38,7 +42,6 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.2.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "url-loader": "^1.0.1",
     "webpack": "^4.2.0",
@@ -47,6 +50,8 @@
   },
   "dependencies": {
     "react": "^16.2.0",
-    "react-stars": "^2.2.5"
+    "react-stars": "^2.2.5",
+    "rebass": "^4.0.7",
+    "styled-components": "^4.4.1"
   }
 }
