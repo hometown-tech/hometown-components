@@ -29,7 +29,7 @@ const ProductCarouselList = styled.ul`
     background-color:  transparent !important;
     border: none;
   }
-  @media (min-width: ${props => props.theme.breakpoints('md')}) {
+  @media (min-width: 992px) {
     overflow: hidden;
   }
 `;

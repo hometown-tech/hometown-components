@@ -13,7 +13,7 @@ const ProductCarouselLi = styled.li`
   flex: 0 0 calc(${props => props.colSize} - 15px);
   max-width: ${props => props.colSize};
 
-  @media (min-width: ${props => props.theme.breakpoints('md')}) {
+  @media (min-width: 992px) {
     margin-left: 7.5px;
     margin-right: 7.5px;
   }
@@ -54,7 +54,7 @@ const CatTitle = styled.p`
   margin-top: 5px;
   margin-bottom: 0;
   text-align: center;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 0.875rem;
     margin-top: 3px;
   }

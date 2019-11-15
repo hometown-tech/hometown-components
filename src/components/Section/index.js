@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const Section = styled.section`
   clear: both;
   display: ${props => props.display};
-  background: ${props => props.theme.colors[props.bg]};
   box-shadow: ${props => props.boxShadow};
   height: ${props => props.height};
   position: relative;
@@ -33,7 +32,6 @@ Section.defaultProps = {
   display: 'block',
   mb: '1.5rem',
   p: '0.9375rem',
-  bg: 'transparent',
   boxShadow: 'none',
   height: 'auto'
 };

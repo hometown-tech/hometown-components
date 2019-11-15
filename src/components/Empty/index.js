@@ -10,7 +10,7 @@ import Text from 'components/Text/';
 const EmptyPageContainer = styled.div`
   text-align: center;
   width: 100%;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     background: ${props => props.bg};
     height: ${props => props.height};
   }
@@ -21,13 +21,13 @@ const EmptyPageWrapper = styled.div`
   top: 12%;
   width: 86%;
   margin: auto;
-  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (min-width: 768px) {
     top: 0;
     padding-top: 4%;
     padding-bottom: 5%;
   }
   h4 {
-    @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+    @media (max-width: 768px) {
       font-size: 1.4rem !important;
     }
   }
@@ -39,7 +39,7 @@ const Btn = styled(Link)`
   padding: 0.75rem 2.5rem;
   text-decoration: none;
   font-size: 1rem;
-  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (min-width: 768px) {
     padding: 0.625rem 2.5rem;
     font-size: 1rem;
   }
@@ -51,13 +51,13 @@ const Btn = styled(Link)`
 
 const CustomHeading = styled(Heading)`
   font-size: 1.8rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 1.25rem !important;
   }
 `;
 
 const TextExtend = styled(Text)`
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 1rem !important;
   }
 `;

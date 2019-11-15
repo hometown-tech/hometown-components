@@ -83,7 +83,7 @@ module.exports = {
     'FlexHtV1/index': './src/newComponents/FlexHtV1/',
     'RelativeHtV1/index': './src/newComponents/RelativeHtV1/',
     'RowHtV1/index': './src/newComponents/RowHtV1/',
-    'ThemeHtV1/index': './src/newComponents/ThemeNewHtV1/',
+    'ThemeHtV1/index': './src/newComponents/ThemeHtV1/',
     'ThemeProviderHtV1/index': './src/newComponents/ThemeProviderHtV1/',
   },
   output: {

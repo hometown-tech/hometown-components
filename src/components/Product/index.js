@@ -31,7 +31,7 @@ const ProductInner = styled(Div)`
   svg {
     vertical-align: middle;
   }
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     padding: 0.25rem 0.3125rem;
   }
   @media (max-width: 320px) {
@@ -73,7 +73,7 @@ const Heading = styled.h3`
   margin-bottom: 0;
   padding-bottom: 6px;
   font-weight: 500;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 11px;
     color: #656565;
   }
@@ -81,21 +81,21 @@ const Heading = styled.h3`
 
 const PriceSpan = styled(Span)`
   font-size: 0.875rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 0.8125rem;
   }
 `;
 
 const CutPriceSpan = styled(Span)`
   font-size: 0.75rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 0.65625rem;
   }
 `;
 
 const DeliveredBySpan = styled(Span)`
   font-size: 0.75rem;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 0.6875rem;
   }
   @media (max-width: 320px) {
@@ -126,7 +126,7 @@ const ComboOfferRibbon = styled(Span)`
   bottom: 0;
   background: #f98d29;
   font-size: 10px;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     font-size: 8px;
     padding: 6px 4px;
   }

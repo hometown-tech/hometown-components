@@ -28,7 +28,7 @@ const SeoContent = styled.div`
   br {
     display: none;
   }
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     padding-top: 0;
   }
 `;

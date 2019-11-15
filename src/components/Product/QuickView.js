@@ -16,7 +16,7 @@ const QuickViewBtn = styled.button`
   font-size: 0.875rem;
   transition: 0.3s all ease;
   display: none;
-  @media (max-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (max-width: 768px) {
     display: none !important;
   }
 `;

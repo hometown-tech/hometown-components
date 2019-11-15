@@ -15,16 +15,16 @@ const Container = styled.div`
     box-sizing: border-box;
   }
 
-  @media (min-width: ${props => props.theme.breakpoints('xs')}) {
+  @media (min-width: 600px) {
     max-width: ${props => props.type === 'cf' ? '100%' : '540px'};
   }
-  @media (min-width: ${props => props.theme.breakpoints('sm')}) {
+  @media (min-width: 768px) {
     max-width: ${props => props.type === 'cf' ? '100%' : '720px'};
   }
-  @media (min-width: ${props => props.theme.breakpoints('md')}) {
+  @media (min-width: 992px) {
     max-width: ${props => props.type === 'cf' ? '100%' : '960px'};
   }
-  @media (min-width: ${props => props.theme.breakpoints('lg')}) {
+  @media (min-width: 1200px) {
     max-width: ${props => props.type === 'cf' ? '100%' : '1170px'};
   }
 `;

@@ -12,7 +12,7 @@ const ProductWrapper = styled.div`
   box-sizing: border-box;
   &:hover {
     button {
-      @media (min-width: ${props => props.theme.breakpoints('md')}) {
+      @media (min-width: 992px) {
         &:last-child {
           display: block !important;
         }

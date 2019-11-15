@@ -1,8 +1,8 @@
 // theme.js
 
-
 // Colors
 const colors = {
+  transparent: 'transparent',
   white: '#fff',
   black: '#000',
   black50: 'rgba(0,0,0,0.5)',
