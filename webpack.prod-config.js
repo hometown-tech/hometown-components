@@ -73,10 +73,17 @@ module.exports = {
     'Extend/index': './src/components/Extend/',
     'LoadMore/index': './src/components/LoadMore/',
     'Callus/index': './src/components/Callus/',
+
     // New Components
-    'ThemeHtV1/index': './src/newComponents/ThemeNew/',
+    'AbsoluteHtV1/index': './src/newComponents/Absolute/',
+    'BoxHtV1/index': './src/newComponents/Box/',
     'ColHtV1/index': './src/newComponents/Col/',
+    'ContainerHtV1/index': './src/newComponents/Container/',
+    'FixedHtV1/index': './src/newComponents/Fixed/',
+    'FlexHtV1/index': './src/newComponents/Flex/',
+    'RelativeHtV1/index': './src/newComponents/Relative/',
     'RowHtV1/index': './src/newComponents/Row/',
+    'ThemeHtV1/index': './src/newComponents/ThemeNew/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

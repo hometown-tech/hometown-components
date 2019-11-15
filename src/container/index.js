@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-import { Box } from 'rebass/styled-components';
+import Box from 'newComponents/BoxHtV1';
 import ThemeHtV1 from 'newComponents/ThemeHtV1';
 import ColHtV1 from 'newComponents/ColHtV1';
 import RowHtV1 from 'newComponents/RowHtV1';
+import AbsoluteHtV1 from 'newComponents/AbsoluteHtV1';
 
 const Index = () => (
   <Fragment>
@@ -32,6 +33,7 @@ const Index = () => (
           </Box>
         </ColHtV1>
       </RowHtV1>
+      <AbsoluteHtV1 top={30} right={0} bg="primary" p={30}>Absolute components</AbsoluteHtV1>
     </ThemeProvider>
   </Fragment>
 );
