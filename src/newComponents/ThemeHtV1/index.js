@@ -32,6 +32,7 @@ const colors = {
   success: '#28a745',
   error: '#dc3545',
   info: '#17a2b8',
+  textFooter: '#1d1d1d'
 };
 
 // boxShadows
@@ -124,11 +125,34 @@ const text = {
   },
   primary: {
     color: 'textPrimary',
-    fontSize: 14
+    fontSize: 16
   },
   heading: {
     color: 'heading',
-    fontSize: 24
+    fontSize: 24,
+    fontFamily: 'medium'
+  },
+  uspTitle: {
+    fontSize: 20,
+    fontFamily: 'regular',
+    textAlign: 'center',
+    color: 'textPrimary'
+  },
+  catSliderTitle: {
+    fontSize: 28,
+    fontFamily: 'medium',
+    textAlign: 'center',
+    color: 'categoryTitle'
+  },
+  footerTitle: {
+    color: 'textFooter',
+    fontSize: 20,
+    mb: 16
+  },
+  footerLink: {
+    color: 'textFooter',
+    fontSize: 16,
+    mb: 16
   }
 };
 
