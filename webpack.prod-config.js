@@ -76,14 +76,18 @@ module.exports = {
 
     // New Components
     'AbsoluteHtV1/index': './src/newComponents/AbsoluteHtV1/',
+    'ButtonHtV1/index': './src/newComponents/ButtonHtV1/',
     'BodyHtV1/index': './src/newComponents/BodyHtV1/',
     'BoxHtV1/index': './src/newComponents/BoxHtV1/',
     'ColHtV1/index': './src/newComponents/ColHtV1/',
     'ContainerHtV1/index': './src/newComponents/ContainerHtV1/',
     'FixedHtV1/index': './src/newComponents/FixedHtV1/',
     'FlexHtV1/index': './src/newComponents/FlexHtV1/',
+    'HeadingHtV1/index': './src/newComponents/HeadingHtV1/',
+    'LinkRedirectHtV1/index': './src/newComponents/LinkRedirectHtV1/',
     'RelativeHtV1/index': './src/newComponents/RelativeHtV1/',
     'RowHtV1/index': './src/newComponents/RowHtV1/',
+    'TextHtV1/index': './src/newComponents/TextHtV1/',
     'ThemeHtV1/index': './src/newComponents/ThemeHtV1/',
     'ThemeProviderHtV1/index': './src/newComponents/ThemeProviderHtV1/',
     'WrapperHtV1/index': './src/newComponents/WrapperHtV1/',

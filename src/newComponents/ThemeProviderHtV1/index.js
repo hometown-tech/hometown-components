@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import ThemeHtV1 from 'newComponents/ThemeHtV1';
+import GlobalStyle from 'newComponents/ThemeHtv1/GlobalStyle';
 
 const ThemeProviderStyled = ({ children }) => (
   <ThemeProvider theme={ThemeHtV1}>
-    {children}
+    <GlobalStyle />
+    <Fragment>
+      {children}
+    </Fragment>
   </ThemeProvider>
 );
 
