@@ -164,6 +164,11 @@ const variants = {
 
   // Dropdown Variants
   dropdown: {
+  },
+
+  // Image variants
+  image: {
+    width: '100%'
   }
 };
 

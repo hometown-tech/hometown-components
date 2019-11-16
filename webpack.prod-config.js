@@ -29,7 +29,8 @@ module.exports = {
     'Pincode/index': './src/components/Pincode/',
     'Product/index': './src/components/Product/',
     'ProductInline/index': './src/components/ProductInline/',
-    'ProductInlineWithQuantity/index': './src/components/ProductInlineWithQuantity/',
+    'ProductInlineWithQuantity/index':
+      './src/components/ProductInlineWithQuantity/',
     'Row/index': './src/components/Row/',
     'Section/index': './src/components/Section/',
     'Span/index': './src/components/Span/',
@@ -48,18 +49,21 @@ module.exports = {
     'Forms/ServiceRequestForm': './src/components/Forms/ServiceRequestForm',
     'ProductDetails/ColorOption': './src/components/ProductDetails/ColorOption',
     'ProductDetails/ProductDesc': './src/components/ProductDetails/ProductDesc',
-    'ProductDetails/ServiceDetails': './src/components/ProductDetails/ServiceDetails',
+    'ProductDetails/ServiceDetails':
+      './src/components/ProductDetails/ServiceDetails',
     'ProductDetails/Specs': './src/components/ProductDetails/Specs',
     'ProductDetails/SpecList': './src/components/ProductDetails/SpecList',
     'ProductDetails/Spec': './src/components/ProductDetails/Spec',
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
-    'ProductDetails/TitlePriceMobile': './src/components/ProductDetails/TitlePriceMobile',
+    'ProductDetails/TitlePriceMobile':
+      './src/components/ProductDetails/TitlePriceMobile',
     'Rating/index': './src/components/Rating/',
     'Reviews/index': './src/components/Reviews/',
     'ShippedTo/index': './src/components/ShippedTo/',
     'WishlistBtn/index': './src/components/WishlistBtn/',
     'CategoryCarousel/index': './src/components/CategoryCarousel/',
-    'CategoryCarousel/CategoryCarouselItem': './src/components/CategoryCarousel/CategoryCarouselItem',
+    'CategoryCarousel/CategoryCarouselItem':
+      './src/components/CategoryCarousel/CategoryCarouselItem',
     'PaymentMethod/index': './src/components/PaymentMethod/',
     'Alert/index': './src/components/Alert/',
     'ScreenLoader/index': './src/components/ScreenLoader/',
@@ -87,6 +91,8 @@ module.exports = {
     'ThemeHtV1/index': './src/newComponents/ThemeHtV1/',
     'ThemeProviderHtV1/index': './src/newComponents/ThemeProviderHtV1/',
     'WrapperHtV1/index': './src/newComponents/WrapperHtV1/',
+    'CardHtV1/index': './src/newComponents/CardHtV1/',
+    'ImageHtV1/index': './src/newComponents/ImageHtV1/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -125,12 +131,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 8192
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -143,13 +151,8 @@ module.exports = {
     ]
   },
   resolve: {
-    modules: [
-      'src',
-      'node_modules'
-    ],
+    modules: ['src', 'node_modules'],
     extensions: ['.js', '.jsx', '.json']
   },
-  plugins: [
-    new UglifyJsPlugin()
-  ]
+  plugins: [new UglifyJsPlugin()]
 };
