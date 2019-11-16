@@ -14,13 +14,25 @@ const colors = {
   transparent: 'transparent',
   white: '#fff',
   black: '#000',
-  primary: '#f98d29',
-  text: 'rgba(51, 51, 51, 0.85)',
+  primary: '#f15a22',
+  heading: '#474747',
+  label: '#474747',
+  bgPrimary: '#595858',
+  bgOffer: '#6d7278',
+  filterBg: '#eeeaea',
+  bgFooter: 'rgba(159, 155, 146, 0.3)',
+  textPrimary: '#474747',
+  textSecondary: '#1c1c1c',
+  textFilter: '#4a4a4a',
+  textSale: '#cc1e05',
+  menuItem: '#121212',
+  categoryTitle: '#3b4171',
   bg: '#f5f5f5',
   border: '#979797',
   success: '#28a745',
   error: '#dc3545',
   info: '#17a2b8',
+  textFooter: '#1d1d1d'
 };
 
 // boxShadows
@@ -32,6 +44,9 @@ const shadows = {
 // borders
 const borders = {
   none: 'none',
+  divider: 'solid 0.5px #979797',
+  dividerBold: 'solid 1px #222222',
+  dividerLight: 'solid 1px rgba(0, 0, 0, 0.25)',
 };
 
 // Font Weight
@@ -49,6 +64,8 @@ const buttonConst = {
   padding: '10px 15px',
   minWidth: 150,
   fontWeight: 'medium',
+  textTransform: 'uppercase',
+  textAlign: 'center',
   '&:hover': {}
 };
 
@@ -106,6 +123,37 @@ const text = {
     fontSize: 12,
     mt: 8
   },
+  primary: {
+    color: 'textPrimary',
+    fontSize: 16
+  },
+  heading: {
+    color: 'heading',
+    fontSize: 24,
+    fontFamily: 'medium'
+  },
+  uspTitle: {
+    fontSize: 20,
+    fontFamily: 'regular',
+    textAlign: 'center',
+    color: 'textPrimary'
+  },
+  catSliderTitle: {
+    fontSize: 28,
+    fontFamily: 'medium',
+    textAlign: 'center',
+    color: 'categoryTitle'
+  },
+  footerTitle: {
+    color: 'textFooter',
+    fontSize: 20,
+    mb: 16
+  },
+  footerLink: {
+    color: 'textFooter',
+    fontSize: 16,
+    mb: 16
+  }
 };
 
 // Container Const
@@ -150,6 +198,10 @@ const variants = {
   container: {
     maxWidth: ['100%', '100%', '1140px'],
     ...containerConst,
+    fluid: {
+      maxWidth: '100%',
+      px: 16
+    }
   },
 
   // Form Variant
