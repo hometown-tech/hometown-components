@@ -97,6 +97,7 @@ module.exports = {
     'WrapperHtV1/index': './src/newComponents/WrapperHtV1/',
     'CardHtV1/index': './src/newComponents/CardHtV1/',
     'ImageHtV1/index': './src/newComponents/ImageHtV1/',
+    'SectionHtV1/index': './src/newComponents/SectionHtV1/',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),

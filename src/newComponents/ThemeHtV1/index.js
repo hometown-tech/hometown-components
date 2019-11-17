@@ -144,6 +144,12 @@ const text = {
     textAlign: 'center',
     color: 'categoryTitle'
   },
+  catSliderHeading: {
+    fontSize: 24,
+    fontFamily: 'medium',
+    textAlign: 'center',
+    color: 'categoryTitle'
+  },
   footerTitle: {
     color: 'textFooter',
     fontSize: 20,
@@ -220,7 +226,41 @@ const variants = {
 
   // Image variants
   image: {
-    width: '100%'
+    width: '100%',
+    logoHomeTown: {
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      height: '148px',
+    },
+    logoDuracucine: {
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      height: '68px',
+      width: '374px',
+    }
+  },
+  // Section variants
+  section: {
+    categorycarousel: {
+      p: '0',
+      pt: '1.5rem',
+      mb: '0',
+      position: 'relative',
+      display: 'block',
+      boxShadow: 'none',
+      height: 'auto',
+    },
+    catSliderItem: {
+      padding: '0 26px',
+      overflow: 'hidden',
+      '&:hover': {
+        transform: 'scale(1.042)',
+        filter: 'grayscale(100%)',
+        transition: '1s',
+      },
+    }
   }
 };
 
