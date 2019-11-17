@@ -13,7 +13,7 @@ const Index = () => (
   <ThemeProviderHtV1>
     {/* Row */}
     <ContainerHtV1 variant="container.fluid">
-      <RowHtV1>
+      <RowHtV1 variant="row.alignCenter">
         <ColHtV1 width={[1, 1, 1 / 2]}>
           <BoxHtV1
             fontSize={16}
