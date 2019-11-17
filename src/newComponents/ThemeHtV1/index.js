@@ -276,7 +276,7 @@ const variants = {
 
   // Container Variant
   container: {
-    maxWidth: ['100%', '100%', '1140px'],
+    maxWidth: ['100%', '100%', '1180px'],
     ...containerConst,
     fluid: {
       maxWidth: '100%',

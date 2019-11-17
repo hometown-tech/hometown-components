@@ -1,20 +1,9 @@
-import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-/**
- * Rebass Components
- */
-import Box from '../BoxHtV1';
-
-const Path = props => (
-  <Box
-    as="path"
-    {...props}
-    sx={{
-      fill: props.theme.colors[props.fill]
-    }}
-  />
-);
+const Path = styled.path`
+  fill: ${props => props.theme.colors[props.fill]};
+`;
 
 Path.propTypes = {
   fill: PropTypes.string
@@ -25,4 +14,3 @@ Path.defaultProps = {
 };
 
 export default Path;
-
