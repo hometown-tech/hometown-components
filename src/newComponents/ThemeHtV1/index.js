@@ -162,6 +162,13 @@ const containerConst = {
   px: 15
 };
 
+// Col Const
+const colConst = {
+  width: '100%',
+  position: 'relative',
+  px: 16,
+};
+
 // Variants
 const variants = {
   body: {
@@ -181,16 +188,74 @@ const variants = {
   row: {
     mx: -16,
     flexWrap: 'wrap',
-    center: {
+    alignCenter: {
       alignItems: 'center'
     }
   },
   col: {
-    px: 16,
-    width: '100%',
-    position: 'relative',
+    ...colConst,
     flexBasis: 0,
     flexGrow: 1,
+    maxWidth: '100%',
+  },
+  'col-1': {
+    ...colConst,
+    flexBasis: '8.333333%',
+    maxWidth: '8.333333%'
+  },
+  'col-2': {
+    ...colConst,
+    flexBasis: '16.666667%',
+    maxWidth: '16.666667%'
+  },
+  'col-3': {
+    ...colConst,
+    flexBasis: '25%',
+    maxWidth: '25%'
+  },
+  'col-4': {
+    ...colConst,
+    flexBasis: '33.333333%',
+    maxWidth: '33.333333%'
+  },
+  'col-5': {
+    ...colConst,
+    flexBasis: '41.666667%',
+    maxWidth: '41.666667%'
+  },
+  'col-6': {
+    ...colConst,
+    flexBasis: '50%',
+    maxWidth: '50%'
+  },
+  'col-7': {
+    ...colConst,
+    flexBasis: '58.333333%',
+    maxWidth: '58.333333%'
+  },
+  'col-8': {
+    ...colConst,
+    flexBasis: '66.666667%',
+    maxWidth: '66.666667%'
+  },
+  'col-9': {
+    ...colConst,
+    flexBasis: '75%',
+    maxWidth: '75%'
+  },
+  'col-10': {
+    ...colConst,
+    flexBasis: '83.333333%',
+    maxWidth: '83.333333%'
+  },
+  'col-11': {
+    ...colConst,
+    flexBasis: '83.333333%',
+    maxWidth: '83.333333%'
+  },
+  'col-12': {
+    ...colConst,
+    flexBasis: '100%',
     maxWidth: '100%'
   },
 
