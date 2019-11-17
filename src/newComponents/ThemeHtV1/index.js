@@ -33,7 +33,8 @@ const colors = {
   success: '#28a745',
   error: '#dc3545',
   info: '#17a2b8',
-  textFooter: '#1d1d1d'
+  textFooter: '#1d1d1d',
+  inputBorder: 'rgba(68, 68, 68, 0.5)',
 };
 
 // boxShadows
@@ -95,7 +96,7 @@ const buttons = {
   },
   link: {
     ...linkConst,
-    color: 'primaryText'
+    color: 'textPrimary'
   },
 };
 
@@ -106,14 +107,14 @@ const text = {
   },
   xSmallSecondary: {
     fontSize: 12,
-    color: 'secondaryText'
+    color: 'textSecondary'
   },
   small: {
     fontSize: 14
   },
   smallSecondary: {
     fontSize: 14,
-    color: 'secondaryText'
+    color: 'textSecondary'
   },
   regular: {
     fontSize: 16
@@ -159,7 +160,12 @@ const text = {
     color: 'textFooter',
     fontSize: 16,
     mb: 16
-  }
+  },
+  inputFieldLabel: {
+    fontSize: 14,
+    color: 'textPrimary',
+    fontWeight: 'medium'
+  },
 };
 
 // Container Const
@@ -185,6 +191,9 @@ const variants = {
 
   // Card Variant
   card: {
+    inputFieldGroup: {
+      my: 8
+    },
   },
 
   // Row / Box / Col Variant
@@ -279,10 +288,20 @@ const variants = {
   form: {
   },
 
+  // Input Variant
+  input: {
+    color: 'textSecondary',
+    border: 0,
+    borderBottom: 1,
+    borderStyle: 'solid',
+    borderColor: 'inputBorder',
+    py: 8
+  },
+
   // link Variant
   link: {
     backgroundColor: 'transparent',
-    color: 'primaryText',
+    color: 'textPrimary',
   },
 
   // Dropdown Variants
