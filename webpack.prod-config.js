@@ -100,6 +100,8 @@ module.exports = {
     'LabelHtV1/index': './src/newComponents/LabelHtV1/',
     'LinkRedirectHtV1/index': './src/newComponents/LinkRedirectHtV1/',
     'LiHtV1/index': './src/newComponents/LiHtV1/',
+    'MasonryGrid/index': './src/newComponents/MasonryGrid/',
+    'MasonryGrid/Item': './src/newComponents/MasonryGrid/Item',
     'PathHtV1/index': './src/newComponents/PathHtV1/',
     'RelativeHtV1/index': './src/newComponents/RelativeHtV1/',
     'RowHtV1/index': './src/newComponents/RowHtV1/',

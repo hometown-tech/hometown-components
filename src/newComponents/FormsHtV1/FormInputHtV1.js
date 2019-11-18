@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '../InputFieldHtV1';
-import Box from '../Box';
+import Box from '../BoxHtV1';
 import TextArea from '../TextAreaHtV1';
 import Label from '../LabelHtV1';
 

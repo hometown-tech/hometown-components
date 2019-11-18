@@ -205,6 +205,9 @@ const variants = {
     flexWrap: 'wrap',
     alignCenter: {
       alignItems: 'center'
+    },
+    justifyCenter: {
+      justifyContent: 'center'
     }
   },
   col: {
@@ -284,6 +287,13 @@ const variants = {
     }
   },
 
+  // Grid Variant
+  maronryGridItem: {
+    display: 'inline-block',
+    m: '10px 0',
+    width: '100%',
+  },
+
   // Form Variant
   form: {
   },
@@ -311,33 +321,29 @@ const variants = {
   // Image variants
   image: {
     width: '100%',
+    fluid: {
+      width: '100%',
+    },
     logoHomeTown: {
       position: 'absolute',
       bottom: '0',
       left: '0',
-      height: '148px',
     },
     logoDuracucine: {
       position: 'absolute',
       bottom: '0',
       left: '0',
-      height: '68px',
-      width: '374px',
+      bg: 'white'
     }
   },
+
   // Section variants
   section: {
-    categorycarousel: {
-      p: '0',
-      pt: '1.5rem',
-      mb: '0',
-      position: 'relative',
-      display: 'block',
-      boxShadow: 'none',
-      height: 'auto',
+    primary: {
+      my: 50
     },
     catSliderItem: {
-      padding: '0 26px',
+      padding: '0 12px',
       overflow: 'hidden',
       '&:hover': {
         transform: 'scale(1.042)',
