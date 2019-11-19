@@ -334,6 +334,10 @@ const variants = {
       bottom: '0',
       left: '0',
       bg: 'white'
+    },
+    logoWrapper: {
+      display: 'inline-block',
+      height: '42px',
     }
   },
 
@@ -350,7 +354,28 @@ const variants = {
         filter: 'grayscale(100%)',
         transition: '1s',
       },
-    }
+    },
+    menuContainer: {
+      position: 'sticky',
+      top: '0',
+      zIndex: '10',
+      background: 'white',
+      height: '116px',
+    },
+    wishListCount: {
+      position: 'absolute',
+      top: '-6px',
+      right: '-9px',
+      backgroundColor: 'primary',
+      color: 'white',
+      padding: '0px',
+      fontSize: '12px',
+      width: '18px',
+      textAlign: 'center',
+      height: '18px',
+      lineHeight: '1.5',
+      borderRadius: '100%'
+    },
   }
 };
 

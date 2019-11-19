@@ -11,8 +11,12 @@
     "comma-dangle": ["error", "only-multiline"],
     "consistent-return": "off",
     "global-require": "off",
-    "indent": ["error", 2, {"SwitchCase": 1}],
-    "max-len": ["error", 120, {"ignorePattern": "[^\\n\\r]{115,120}\\{(?:'|\") (?:'|\")\\}"}],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "max-len": [
+      "error",
+      120,
+      { "ignorePattern": "[^\\n\\r]{115,120}\\{(?:'|\") (?:'|\")\\}" }
+    ],
     "no-alert": "off",
     "no-confusing-arrow": "off",
     "no-console": "off",
@@ -24,10 +28,10 @@
     "react/jsx-closing-tag-location": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-no-target-blank": "warn",
-    "react/no-multi-comp": ["error", {"ignoreStateless": true}],
+    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
     "react/no-unescaped-entities": "off",
     "react/prefer-stateless-function": "off",
-    "jsx-a11y/label-has-for": ["off", {"allowChildren": true}],
+    "jsx-a11y/label-has-for": ["off", { "allowChildren": true }],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -40,19 +44,13 @@
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "error",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "linebreak-style": 0
   },
-  "plugins": [
-    "react",
-    "import"
-  ],
+  "plugins": ["react", "import"],
   "settings": {
     "import/resolve": {
-      "moduleDirectory": [
-        "node_modules",
-        "src",
-        "api"
-      ]
+      "moduleDirectory": ["node_modules", "src", "api"]
     }
   },
   "parser": "babel-eslint",
