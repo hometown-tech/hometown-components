@@ -61,17 +61,27 @@ const fontWeights = {
 
 // Button Constant
 const buttonConst = {
-  borderRadius: 5,
   fontSize: 14,
   padding: '10px 15px',
   fontWeight: 'medium',
   textTransform: 'uppercase',
   textAlign: 'center',
+  borderRadius: 0,
   '&:hover': {}
 };
 
+const buttonLargeConst = {
+  height: 48,
+  fontSize: 18,
+  fontFamily: 'medium',
+  px: 30,
+  py: 10,
+  textAlign: 'center',
+  borderRadius: 0
+};
+
 const linkConst = {
-  borderRadius: 5,
+  borderRadius: 0,
   fontSize: 14,
   padding: '10px 15px',
   backgroundColor: 'transparent',
@@ -85,7 +95,12 @@ const buttons = {
   primary: {
     backgroundColor: 'primary',
     color: 'white',
-    ...buttonConst
+    ...buttonConst,
+    large: {
+      backgroundColor: 'primary',
+      color: 'white',
+      ...buttonLargeConst
+    }
   },
   outline: {
     backgroundColor: 'transparent',
@@ -133,20 +148,21 @@ const text = {
     fontSize: 24,
     fontFamily: 'medium'
   },
+  largeHeading: {
+    color: 'heading',
+    fontSize: 36,
+    fontFamily: 'medium'
+  },
   uspTitle: {
-    fontSize: 20,
     fontFamily: 'regular',
+    fontSize: 16,
+    lineHeight: 1.4,
+    color: 'black',
     textAlign: 'center',
-    color: 'textPrimary'
+    textTransform: 'uppercase',
   },
   catSliderTitle: {
-    fontSize: 28,
-    fontFamily: 'medium',
-    textAlign: 'center',
-    color: 'categoryTitle'
-  },
-  catSliderHeading: {
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: 'medium',
     textAlign: 'center',
     color: 'categoryTitle'
@@ -206,7 +222,17 @@ const variants = {
     alignCenter: {
       alignItems: 'center'
     },
+    alignRight: {
+      alignItems: 'flex-end'
+    },
+    alignLeft: {
+      alignItems: 'flex-start'
+    },
     justifyCenter: {
+      justifyContent: 'center'
+    },
+    contentCenter: {
+      alignItems: 'center',
       justifyContent: 'center'
     }
   },
