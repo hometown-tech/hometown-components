@@ -154,19 +154,15 @@ const text = {
     fontFamily: 'medium'
   },
   uspTitle: {
-    fontSize: 20,
     fontFamily: 'regular',
+    fontSize: 16,
+    lineHeight: 1.4,
+    color: 'black',
     textAlign: 'center',
-    color: 'textPrimary'
+    textTransform: 'uppercase',
   },
   catSliderTitle: {
-    fontSize: 28,
-    fontFamily: 'medium',
-    textAlign: 'center',
-    color: 'categoryTitle'
-  },
-  catSliderHeading: {
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: 'medium',
     textAlign: 'center',
     color: 'categoryTitle'
