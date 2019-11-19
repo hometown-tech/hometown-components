@@ -110,6 +110,9 @@ module.exports = {
     'ThemeProviderHtV1/index': './src/newComponents/ThemeProviderHtV1/',
     'UlHtV1/index': './src/newComponents/UlHtV1/',
     'WrapperHtV1/index': './src/newComponents/WrapperHtV1/',
+    'FormsHtV1/LoginFormHtV1': './src/newComponents/FormsHtV1/LoginFormHtV1',
+    'FormsHtV1/SignUpFormHtV1': './src/newComponents/FormsHtV1/SignUpFormHtV1',
+    'FormsHtV1/ForgotPasswordFormHtV1': './src/newComponents/FormsHtV1/ForgotPasswordFormHtV1',
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
