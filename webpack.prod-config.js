@@ -55,15 +55,13 @@ module.exports = {
     'ProductDetails/SpecList': './src/components/ProductDetails/SpecList',
     'ProductDetails/Spec': './src/components/ProductDetails/Spec',
     'ProductDetails/TitlePrice': './src/components/ProductDetails/TitlePrice',
-    'ProductDetails/TitlePriceMobile':
-      './src/components/ProductDetails/TitlePriceMobile',
+    'ProductDetails/TitlePriceMobile': './src/components/ProductDetails/TitlePriceMobile',
     'Rating/index': './src/components/Rating/',
     'Reviews/index': './src/components/Reviews/',
     'ShippedTo/index': './src/components/ShippedTo/',
     'WishlistBtn/index': './src/components/WishlistBtn/',
     'CategoryCarousel/index': './src/components/CategoryCarousel/',
-    'CategoryCarousel/CategoryCarouselItem':
-      './src/components/CategoryCarousel/CategoryCarouselItem',
+    'CategoryCarousel/CategoryCarouselItem': './src/components/CategoryCarousel/CategoryCarouselItem',
     'PaymentMethod/index': './src/components/PaymentMethod/',
     'Alert/index': './src/components/Alert/',
     'ScreenLoader/index': './src/components/ScreenLoader/',
