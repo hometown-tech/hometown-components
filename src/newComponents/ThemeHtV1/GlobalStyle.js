@@ -40,7 +40,6 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       outline: none;
       opacity: 0.8;
-      color: 'primary';
     }
   }
 

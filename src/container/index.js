@@ -6,6 +6,7 @@ import BoxHtV1 from 'newComponents/BoxHtV1';
 import ContainerHtV1 from 'newComponents/ContainerHtV1';
 import ColHtV1 from 'newComponents/ColHtV1';
 import FavHtV1 from 'newComponents/Icons/FavHtV1';
+import CartHtV1 from 'newComponents/Icons/CartHtV1';
 import HeadingHtV1 from 'newComponents/HeadingHtV1';
 import LabelHtV1 from 'newComponents/LabelHtV1';
 import RowHtV1 from 'newComponents/RowHtV1';
@@ -52,6 +53,7 @@ const Index = () => (
             <TextHtV1>Text Secondary</TextHtV1>
             <LabelHtV1>Label</LabelHtV1>
             <FavHtV1 />
+            <CartHtV1 />
           </BoxHtV1>
         </ColHtV1>
       </RowHtV1>

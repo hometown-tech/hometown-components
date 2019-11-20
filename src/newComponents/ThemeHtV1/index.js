@@ -49,6 +49,7 @@ const borders = {
   divider: 'solid 0.5px #979797',
   dividerBold: 'solid 1px #222222',
   dividerLight: 'solid 1px rgba(0, 0, 0, 0.25)',
+  dropdown: '1px solid #dddddda1',
 };
 
 // Font Weight
@@ -143,6 +144,10 @@ const text = {
     color: 'textPrimary',
     fontSize: 16
   },
+  headerLabel: {
+    color: 'black',
+    fontSize: 14,
+  },
   heading: {
     color: 'heading',
     fontSize: 24,
@@ -182,6 +187,28 @@ const text = {
     color: 'textPrimary',
     fontWeight: 'medium'
   },
+  menu: {
+    fontSize: 16,
+    fontFamily: 'medium',
+    color: 'menuItem',
+    px: 10,
+    py: 10,
+    whiteSpace: 'nowrap',
+    position: 'relative'
+  },
+  menuNew: {
+    width: 32,
+    position: 'absolute',
+    top: 2,
+    right: 0,
+    bg: 'primary',
+    borderRadius: 10,
+    color: 'white',
+    fontSize: 9,
+    p: '4px 5px 2px',
+    margin: 0,
+    lineHeight: 1,
+  }
 };
 
 // Container Const
@@ -215,7 +242,6 @@ const variants = {
   // Row / Box / Col Variant
   box: {
   },
-  // Row Variant
   row: {
     mx: -16,
     flexWrap: 'wrap',
@@ -234,6 +260,14 @@ const variants = {
     contentCenter: {
       alignItems: 'center',
       justifyContent: 'center'
+    },
+    nav: {
+      width: '100%',
+      height: 46,
+      mx: -10,
+      whiteSpace: 'nowrap',
+      justifyContent: 'space-between',
+      alignItems: 'center'
     }
   },
   col: {
@@ -402,6 +436,10 @@ const variants = {
       lineHeight: '1.5',
       borderRadius: '100%'
     },
+  },
+
+  li: {
+    listStyle: 'none'
   }
 };
 
