@@ -404,7 +404,8 @@ const variants = {
   // Section variants
   section: {
     primary: {
-      my: 50
+      my: 50,
+      position: 'relative'
     },
     catSliderItem: {
       padding: '0 12px',
