@@ -104,6 +104,7 @@ module.exports = {
     'MasonryGrid/index': './src/newComponents/MasonryGrid/',
     'MasonryGrid/Item': './src/newComponents/MasonryGrid/Item',
     'PathHtV1/index': './src/newComponents/PathHtV1/',
+    'RatingHtV1/index': './src/newComponents/RatingHtV1/',
     'RelativeHtV1/index': './src/newComponents/RelativeHtV1/',
     'RowHtV1/index': './src/newComponents/RowHtV1/',
     'SectionHtV1/index': './src/newComponents/SectionHtV1/',

@@ -106,6 +106,10 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
   }
   /* NProgress End */
+
+  .slick-slide img {
+    width: 100%;
+  }
 `;
 
 export default GlobalStyle;
