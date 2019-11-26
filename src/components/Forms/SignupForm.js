@@ -10,14 +10,18 @@ import FormInput from './FormInput';
 export default class SignupForm extends Component {
   render() {
     const {
+      name,
       email,
       phone,
       password,
+      onChangeName,
       onChangeEmail,
       onChangePhone,
       onChangePassword,
       emailFeedBackError,
       emailFeedBackMessage,
+      nameFeedBackError,
+      nameFeedBackMessage,
       phoneFeedBackError,
       phoneFeedBackMessage,
       passwordFeedBackError,
@@ -29,6 +33,15 @@ export default class SignupForm extends Component {
     } = this.props;
     return (
       <form onSubmit={onSubmitSignup}>
+        <FormInput
+          label="Full Name *"
+          type="text"
+          placeholder=""
+          onChange={onChangeName}
+          value={name}
+          feedBackError={nameFeedBackError}
+          feedBackMessage={nameFeedBackMessage}
+        />
         <FormInput
           label="Email ID *"
           type="text"
@@ -84,15 +97,19 @@ export default class SignupForm extends Component {
 }
 
 SignupForm.defaultProps = {
+  name: '',
   email: '',
   phone: '',
   password: '',
   emailFeedBackError: false,
   emailFeedBackMessage: '',
+  nameFeedBackError: PropTypes.bool,
+  nameFeedBackMessage: PropTypes.string,
   phoneFeedBackError: false,
   phoneFeedBackMessage: '',
   passwordFeedBackError: false,
   passwordFeedBackMessage: '',
+  onChangeName: () => {},
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangePassword: () => {},
@@ -103,10 +120,14 @@ SignupForm.defaultProps = {
 };
 
 SignupForm.propTypes = {
+  onChangeName: PropTypes.func,
   onChangeEmail: PropTypes.func,
   onChangePhone: PropTypes.func,
   onChangePassword: PropTypes.func,
   onSubmitSignup: PropTypes.func,
+  name: PropTypes.string,
+  nameFeedBackError: PropTypes.bool,
+  nameFeedBackMessage: PropTypes.string,
   email: PropTypes.string,
   phone: PropTypes.string,
   password: PropTypes.string,
