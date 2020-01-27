@@ -25,6 +25,7 @@ const Row = styled.div`
   position: relative;
 
   ${props => display(props, props.display)};
+  ${props => props.bg && { background: props.bg }}
   ${props => props.m && { margin: props.m }}
   ${props => props.mt && { marginTop: props.mt }}
   ${props => props.mr && { marginRight: props.mr }}
