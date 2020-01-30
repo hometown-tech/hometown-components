@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Heading from 'components/Heading';
@@ -49,42 +49,68 @@ const TitlePrice = ({
               mt="0px"
               fontFamily="medium"
               ellipsis={false}
+              display="flex"
             >
               <Span
                 va="text-top"
                 itemProp="priceCurrency"
                 content="INR"
                 color="#f98d29"
+                fontSize="1rem"
+                pr="10px"
+                pt="8px"
+              >Price : </Span>
+              <Span
+                va="text-top"
+                itemProp="priceCurrency"
+                content="INR"
+                color="#f98d29"
                 fontSize="1.6rem"
-              >₹</Span>
+              >₹ </Span>
               <Span
                 itemProp="price"
                 va="text-top"
                 content={discPrice.split(',').join('')}
                 color="#f98d29"
                 fontSize="1.6rem"
-              >{discPrice}</Span>
-              { price !== discPrice &&
-              <Span
-                fontSize="0.875rem"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="0.75rem"
-                fontFamily="regular"
-                type="lt"
-                va="text-top"
-                lh="2.2"
-              >₹{price}</Span>
-              }
-              { price !== discPrice &&
-              <Span
-                fontSize="0.75rem"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="10px"
-                fontFamily="regular"
-                va="text-top"
-                lh="2.2"
-              >(incl. of all taxes)
-              </Span>
+              > {discPrice}</Span>
+            </HeadingH5>
+            <HeadingH5
+              fontSize="1.6rem"
+              color="primary"
+              mb="0px"
+              pb="2px"
+              mt="0px"
+              fontFamily="medium"
+              ellipsis={false}
+            >
+              {price !== discPrice &&
+              <Fragment>
+                <Span
+                  fontSize="0.875rem"
+                  color="rgba(0, 0, 0, 0.4)"
+                  fontFamily="regular"
+                  va="text-top"
+                  lh="2.2"
+                >M.R.P : </Span>
+                <Span
+                  fontSize="0.875rem"
+                  color="rgba(0, 0, 0, 0.4)"
+                  fontFamily="regular"
+                  type="lt"
+                  va="text-top"
+                  lh="2.2"
+                >₹ {price}</Span>
+                <Span
+                  fontSize="0.75rem"
+                  color="rgba(0, 0, 0, 0.4)"
+                  ml="10px"
+                  fontFamily="regular"
+                  va="text-top"
+                  lh="2.4"
+                >(incl. of all taxes)
+                </Span>
+              </Fragment>
               }
             </HeadingH5>
             <HeadingH5
@@ -104,7 +130,7 @@ const TitlePrice = ({
                 ml="0"
                 fontFamily="regular"
                 va="text-top"
-              >Saving ₹{savingsRs}
+              >Saving ₹ {savingsRs}
                 {' '}({savingsPercentage}% OFF)
               </Span>
               }

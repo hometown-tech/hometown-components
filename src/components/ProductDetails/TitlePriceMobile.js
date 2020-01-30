@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Heading from 'components/Heading';
@@ -41,43 +41,65 @@ const TitlePrice = ({
               mt="0px"
               fontFamily="regular"
               ellipsis={false}
+              display="flex"
             >
               <Span
                 va="text-top"
                 itemProp="priceCurrency"
                 content="INR"
                 color="#f98d29"
-                fontSize="1.375rem"
-              >₹</Span>
+                fontSize="1rem"
+                pr="5px"
+                pt="3px"
+              >Price : </Span>
               <Span
                 itemProp="price"
                 va="text-top"
                 content={discPrice.split(',').join('')}
                 color="#f98d29"
                 fontSize="1.375rem"
-              >{discPrice}</Span>
+              >₹ {discPrice}</Span>
+            </HeadingH5>
+            <HeadingH5
+              itemProp="offers"
+              itemScope
+              itemType="http://schema.org/Offer"
+              fontSize="1.125em"
+              color="primary"
+              mb="0px"
+              pb="0"
+              mt="0px"
+              fontFamily="regular"
+              ellipsis={false}
+            >
               {price !== discPrice &&
-              <Span
-                fontSize="0.875rem"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="0.75rem"
-                fontFamily="light"
-                type="lt"
-                va="middle"
-                lh="2.2"
-              >₹{price}</Span>
-              }
-              {price !== discPrice &&
-              <Span
-                fontSize="0.75rem"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="7px"
-                fontFamily="regular"
-                va="text-top"
-                lh="1.85"
-              >
-              (incl. of all taxes)
-              </Span>
+              <Fragment>
+                <Span
+                  fontSize="0.75rem"
+                  color="rgba(0, 0, 0, 0.4)"
+                  fontFamily="regular"
+                  va="middle"
+                  lh="2.2"
+                >M.R.P : </Span>
+                <Span
+                  fontSize="0.875rem"
+                  color="rgba(0, 0, 0, 0.4)"
+                  fontFamily="light"
+                  type="lt"
+                  va="middle"
+                  lh="2.2"
+                >₹ {price}</Span>
+                <Span
+                  fontSize="0.75rem"
+                  color="rgba(0, 0, 0, 0.4)"
+                  ml="7px"
+                  fontFamily="regular"
+                  va="text-top"
+                  lh="2"
+                >
+                  (incl. of all taxes)
+                </Span>
+              </Fragment>
               }
             </HeadingH5>
             <HeadingH5
