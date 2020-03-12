@@ -18,7 +18,15 @@ const ReviewWrapper = styled(Div)`
 `;
 
 const TitlePrice = ({
-  name, price, discPrice, savingsRs, savingsPercentage, count, ratings, onClickReviews, offerDetails
+  name,
+  price,
+  discPrice,
+  savingsRs,
+  savingsPercentage,
+  count,
+  ratings,
+  onClickReviews,
+  offerDetails
 }) => (
   <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
@@ -135,64 +143,70 @@ const TitlePrice = ({
               </Span>
               }
             </HeadingH5>
-            <HeadingH5
-              itemProp="offers"
-              itemScope
-              itemType="http://schema.org/Offer"
-              fontSize="1.6rem"
-              color="primary"
-              mb="0px"
-              pb="5px"
-              mt="10px"
-              pt="10px"
-              fontFamily="medium"
-              ellipsis={false}
-              display="flex"
-              style={{ borderTop: '1px solid #e9e9e9' }}
-            >
-              <Span
-                va="text-top"
-                itemProp="priceCurrency"
-                content="INR"
-                color="#f98d29"
-                fontSize="1rem"
-                pr="10px"
-                pt="8px"
-              >Offer Price : </Span>
-              <Span
-                va="text-top"
-                itemProp="priceCurrency"
-                content="INR"
-                color="#f98d29"
-                fontSize="1.6rem"
-              >₹ </Span>
-              <Span
-                itemProp="price"
-                va="text-top"
-                content={discPrice.split(',').join('')}
-                color="#f98d29"
-                fontSize="1.6rem"
-              > {offerDetails.offer_price}</Span>
-            </HeadingH5>
-            <Div>
-              <Span
-                fontSize="0.8125em"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="0"
-                fontFamily="regular"
-                va="text-top"
-              >After Using Coupon
-              </Span>
-              <Span
-                fontSize="0.8125em"
-                color="#f98d29"
-                ml="0"
-                fontFamily="regular"
-                va="text-top"
-                tt="uppercase"
-              >{' '}{offerDetails.coupon_code}
-              </Span>
-            </Div>
+            {
+              !!offerDetails.offerPrice &&
+              !!offerDetails.couponCode &&
+              <Div>
+                <HeadingH5
+                  itemProp="offers"
+                  itemScope
+                  itemType="http://schema.org/Offer"
+                  fontSize="1.6rem"
+                  color="primary"
+                  mb="0px"
+                  pb="5px"
+                  mt="10px"
+                  pt="10px"
+                  fontFamily="medium"
+                  ellipsis={false}
+                  display="flex"
+                  style={{ borderTop: '1px solid #e9e9e9' }}
+                >
+                  <Span
+                    va="text-top"
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="1rem"
+                    pr="10px"
+                    pt="8px"
+                  >Offer Price : </Span>
+                  <Span
+                    va="text-top"
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="1.6rem"
+                  >₹ </Span>
+                  <Span
+                    itemProp="price"
+                    va="text-top"
+                    content={discPrice.split(',').join('')}
+                    color="#f98d29"
+                    fontSize="1.6rem"
+                  > {offerDetails.offerPrice}</Span>
+                </HeadingH5>
+                <Div>
+                  <Span
+                    fontSize="0.8125em"
+                    color="rgba(0, 0, 0, 0.4)"
+                    ml="0"
+                    fontFamily="regular"
+                    va="text-top"
+                  >After Using Coupon
+                  </Span>
+                  <Span
+                    fontSize="0.8125em"
+                    color="#f98d29"
+                    ml="0"
+                    fontFamily="regular"
+                    va="text-top"
+                    tt="uppercase"
+                  >{' '}{offerDetails.couponCode}
+                  </Span>
+                </Div>
+              </Div>
+            }
           </Div>
           <ReviewWrapper col="3" ta="right">
             {ratings !== 0 &&
