@@ -10,7 +10,15 @@ import Div from 'components/Div';
 import ReactStars from 'react-stars';
 
 const TitlePrice = ({
-  name, price, discPrice, savingsRs, savingsPercentage, count, ratings, onClickReviews
+  name,
+  price,
+  discPrice,
+  savingsRs,
+  savingsPercentage,
+  count,
+  ratings,
+  onClickReviews,
+  offerDetails
 }) => (
   <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
@@ -124,6 +132,70 @@ const TitlePrice = ({
               </Span>
               }
             </HeadingH5>
+            {
+              !!offerDetails.offerPrice &&
+              !!offerDetails.couponCode &&
+              <Div>
+                <HeadingH5
+                  itemProp="offers"
+                  itemScope
+                  itemType="http://schema.org/Offer"
+                  fontSize="1.6rem"
+                  color="primary"
+                  mb="0px"
+                  pb="5px"
+                  mt="10px"
+                  pt="10px"
+                  fontFamily="medium"
+                  ellipsis={false}
+                  display="flex"
+                  style={{ borderTop: '1px solid #e9e9e9' }}
+                >
+                  <Span
+                    va="text-top"
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="1rem"
+                    pr="10px"
+                    pt="8px"
+                  >Offer Price : </Span>
+                  <Span
+                    va="text-top"
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="1.6rem"
+                  >₹ </Span>
+                  <Span
+                    itemProp="price"
+                    va="text-top"
+                    content={discPrice.split(',').join('')}
+                    color="#f98d29"
+                    fontSize="1.6rem"
+                  > {offerDetails.offerPrice}</Span>
+                </HeadingH5>
+                <Div>
+                  <Span
+                    fontSize="0.8125em"
+                    color="rgba(0, 0, 0, 0.4)"
+                    ml="0"
+                    fontFamily="regular"
+                    va="text-top"
+                  >After Using Coupon
+                  </Span>
+                  <Span
+                    fontSize="0.8125em"
+                    color="#f98d29"
+                    ml="0"
+                    fontFamily="regular"
+                    va="text-top"
+                    tt="uppercase"
+                  >{' '}{offerDetails.couponCode}
+                  </Span>
+                </Div>
+              </Div>
+            }
           </Div>
           <Div col="12" ta="right" mt="2px">
             {ratings !== 0 &&
@@ -169,7 +241,8 @@ TitlePrice.propTypes = {
   savingsRs: PropTypes.string,
   ratings: PropTypes.number,
   count: PropTypes.number,
-  onClickReviews: PropTypes.func
+  onClickReviews: PropTypes.func,
+  offerDetails: PropTypes.objectOf(PropTypes.any)
 };
 
 TitlePrice.defaultProps = {
@@ -180,7 +253,8 @@ TitlePrice.defaultProps = {
   savingsRs: '',
   count: 0,
   ratings: 0,
-  onClickReviews: () => {}
+  onClickReviews: () => {},
+  offerDetails: {}
 };
 
 export default TitlePrice;
