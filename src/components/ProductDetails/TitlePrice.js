@@ -37,161 +37,163 @@ const TitlePrice = ({
           {name}
         </Heading>
         <Row display="block" mr="0" ml="0">
-          <Div col="9">
-            <HeadingH5
-              itemProp="offers"
-              itemScope
-              itemType="http://schema.org/Offer"
-              fontSize="1.6rem"
-              color="primary"
-              mb="0px"
-              pb="5px"
-              mt="0px"
-              fontFamily="medium"
-              ellipsis={false}
-              display="flex"
-            >
-              <Span
-                va="text-top"
-                itemProp="priceCurrency"
-                content="INR"
-                color="#f98d29"
-                fontSize="1rem"
-                pr="10px"
-                pt="8px"
-              >Price : </Span>
-              <Span
-                va="text-top"
-                itemProp="priceCurrency"
-                content="INR"
-                color="#f98d29"
-                fontSize="1.6rem"
-              >₹ </Span>
-              <Span
-                itemProp="price"
-                va="text-top"
-                content={discPrice.split(',').join('')}
-                color="#f98d29"
-                fontSize="1.6rem"
-              > {discPrice}</Span>
-            </HeadingH5>
-            <HeadingH5
-              fontSize="1.6rem"
-              color="primary"
-              mb="0px"
-              pb="2px"
-              mt="0px"
-              fontFamily="medium"
-              ellipsis={false}
-            >
+          <Div col="12">
+            <Row ml="0" mr="0">
               {price !== discPrice &&
-              <Fragment>
-                <Span
-                  fontSize="0.875rem"
-                  color="rgba(0, 0, 0, 0.4)"
-                  fontFamily="regular"
-                  va="text-top"
-                  lh="2.2"
-                >M.R.P : </Span>
-                <Span
-                  fontSize="0.875rem"
-                  color="rgba(0, 0, 0, 0.4)"
-                  fontFamily="regular"
-                  type="lt"
-                  va="text-top"
-                  lh="2.2"
-                >₹ {price}</Span>
-                <Span
-                  fontSize="0.75rem"
-                  color="rgba(0, 0, 0, 0.4)"
-                  ml="10px"
-                  fontFamily="regular"
-                  va="text-top"
-                  lh="2.4"
-                >(incl. of all taxes)
-                </Span>
-              </Fragment>
+                <Fragment>
+                  <Div style={{ width: 75 }}>
+                    <Span
+                      fontSize="1rem"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                    >M.R.P</Span>
+                  </Div>
+                  <Div style={{ width: 'calc(100% - 75px)' }}>
+                    <Span
+                      fontSize="1rem"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                      type="lt"
+                    >₹ {price}</Span>
+                    <Span
+                      fontSize="0.75rem"
+                      color="rgba(0, 0, 0, 0.4)"
+                      ml="10px"
+                      fontFamily="regular"
+                      lh="2.4"
+                    >(incl. of all taxes)
+                    </Span>
+                  </Div>
+                </Fragment>
               }
-            </HeadingH5>
-            <HeadingH5
-              itemScope
-              itemType=""
-              fontSize="1rem"
-              color="textDark"
-              mb="0px"
-              pb="2px"
-              mt="0px"
-              fontFamily="medium"
-            >
-              { price !== discPrice &&
-              <Span
-                fontSize="0.8125em"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="0"
-                fontFamily="regular"
-                va="text-top"
-              >Saving ₹ {savingsRs}
-                {' '}({savingsPercentage}% OFF)
-              </Span>
-              }
-            </HeadingH5>
+            </Row>
             <HeadingH5
               itemProp="offers"
               itemScope
               itemType="http://schema.org/Offer"
-              fontSize="1.6rem"
-              color="primary"
-              mb="0px"
-              pb="5px"
-              mt="10px"
-              pt="10px"
-              fontFamily="medium"
               ellipsis={false}
               display="flex"
-              style={{ borderTop: '1px solid #e9e9e9' }}
+              mt="0"
+              mb="0"
             >
-              <Span
-                va="text-top"
-                itemProp="priceCurrency"
-                content="INR"
-                color="#f98d29"
-                fontSize="1rem"
-                pr="10px"
-                pt="8px"
-              >Offer Price : </Span>
-              <Span
-                va="text-top"
-                itemProp="priceCurrency"
-                content="INR"
-                color="#f98d29"
-                fontSize="1.6rem"
-              >₹ </Span>
-              <Span
-                itemProp="price"
-                va="text-top"
-                content={discPrice.split(',').join('')}
-                color="#f98d29"
-                fontSize="1.6rem"
-              > {offerDetails.offer_price}</Span>
+              <Div style={{ width: 75 }}>
+                <Span
+                  itemProp="priceCurrency"
+                  content="INR"
+                  fontSize="18px"
+                >Price : </Span>
+              </Div>
+              <Div style={{ width: 'calc(100% - 75px)' }}>
+                <Span
+                  itemProp="price"
+                  content={discPrice.split(',').join('')}
+                  fontSize="18px"
+                >₹ {discPrice}</Span>
+              </Div>
             </HeadingH5>
             <Div>
-              <Span
-                fontSize="0.8125em"
-                color="rgba(0, 0, 0, 0.4)"
-                ml="0"
-                fontFamily="regular"
-                va="text-top"
-              >After Using Coupon
-              </Span>
-              <Span
-                fontSize="0.8125em"
-                color="#f98d29"
-                ml="0"
-                fontFamily="regular"
-                va="text-top"
-                tt="uppercase"
-              >{' '}{offerDetails.coupon_code}
-              </Span>
+              <HeadingH5
+                itemProp="offers"
+                itemScope
+                itemType="http://schema.org/Offer"
+                ellipsis={false}
+                display="flex"
+                pt="5px"
+                pb="12px"
+                mt="0"
+                mb="0"
+                style={{
+                  borderBottom: 'dashed 1px #d2d2d2',
+                }}
+              >
+                <Div style={{ width: 115 }}>
+                  <Span
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="20px"
+                  >Offer Price</Span>
+                </Div>
+                <Div style={{ width: 'calc(100% - 115px)' }}>
+                  <Span
+                    itemProp="price"
+                    content={discPrice.split(',').join('')}
+                    color="#f98d29"
+                    fontSize="20px"
+                  >
+                    {/* ₹ {offerDetails.offer_price} */}
+                  ₹ 30,000
+                    <Span
+                      fontSize="12px"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                      ml="10px"
+                    >(After Using Coupon {' '}
+                      <Span
+                        fontSize="12px"
+                        color="#f98d29"
+                        fontFamily="regular"
+                        tt="uppercase"
+                      >
+                        {' '}{offerDetails.coupon_code}
+                      ABC123
+                      </Span>)
+                    </Span>
+                  </Span>
+                </Div>
+              </HeadingH5>
+            </Div>
+            <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+              <HeadingH5
+                itemScope
+                itemType=""
+                mb="0px"
+                mt="0px"
+                display="flex"
+              >
+                {price !== discPrice &&
+                <Fragment>
+                  <Div style={{ width: 115 }}>
+                    <Span fontSize="16px" color="rgba(0, 0, 0, 0.4)" fontFamily="regular">Total Savings</Span>
+                  </Div>
+                  <Div style={{ width: 'calc(100% - 115px)' }}>
+                    <Span
+                      fontSize="16px"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                    >₹ {savingsRs}{' '}({savingsPercentage}% OFF)
+                    </Span>
+                    <Div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '5px 0',
+                      lineHeight: 1.5
+                    }}
+                    >
+                      <Span
+                        fontSize="12px"
+                        color="rgba(0, 0, 0, 0.4)"
+                        fontFamily="regular"
+                      >₹ 17,060 <br /> (Retail Discount)
+                      </Span>
+                      <Span
+                        fontSize="12px"
+                        color="rgba(0, 0, 0, 0.4)"
+                        fontFamily="regular"
+                      >{' '}+{' '}
+                      </Span>
+                      <Span
+                        fontSize="12px"
+                        color="rgba(0, 0, 0, 0.4)"
+                        fontFamily="regular"
+                      >₹ 14,800 <br /> (Limited Time Coupon)
+                      </Span>
+                    </Div>
+                  </Div>
+                </Fragment>
+                }
+              </HeadingH5>
             </Div>
           </Div>
           <ReviewWrapper col="3" ta="right">
