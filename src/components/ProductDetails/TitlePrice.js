@@ -26,7 +26,8 @@ const TitlePrice = ({
   count,
   ratings,
   onClickReviews,
-  offerDetails
+  offerDetails,
+  savingTotal
 }) => (
   <Section mb="0.3125rem" p="0">
     <Container type="container" pr="1rem" pl="1rem">
@@ -154,7 +155,7 @@ const TitlePrice = ({
                   </Div>
                 </HeadingH5>
               </Div>}
-            <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+            {price !== discPrice && <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
               <HeadingH5
                 itemScope
                 itemType=""
@@ -162,7 +163,6 @@ const TitlePrice = ({
                 mt="0px"
                 display="flex"
               >
-                {price !== discPrice &&
                 <Fragment>
                   <Div style={{ width: 120 }}>
                     <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings</Span>
@@ -187,7 +187,7 @@ const TitlePrice = ({
                         fontSize="12px"
                         color="rgba(0, 0, 0, 0.4)"
                         fontFamily="regular"
-                      >₹ {savingsRs}<br /> (Retail Discount)
+                      >₹ {savingTotal}<br /> (Retail Discount)
                       </Span>
                       <Span
                         fontSize="12px"
@@ -206,9 +206,8 @@ const TitlePrice = ({
                     </Div>}
                   </Div>
                 </Fragment>
-                }
               </HeadingH5>
-            </Div>
+            </Div>}
           </Div>
           <ReviewWrapper col="3" ta="right">
             {ratings !== 0 &&
@@ -251,6 +250,7 @@ TitlePrice.propTypes = {
   discPrice: PropTypes.string,
   savingsPercentage: PropTypes.string,
   savingsRs: PropTypes.string,
+  savingTotal: PropTypes.number,
   ratings: PropTypes.number,
   count: PropTypes.number,
   onClickReviews: PropTypes.func,
@@ -258,6 +258,7 @@ TitlePrice.propTypes = {
 };
 
 TitlePrice.defaultProps = {
+  savingTotal: 0,
   name: '',
   price: '',
   discPrice: '',
