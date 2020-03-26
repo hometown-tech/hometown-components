@@ -99,14 +99,14 @@ const TitlePrice = ({
                 ellipsis={false}
                 display="flex"
                 pt="5px"
-                pb="12px"
+                pb="5px"
                 mt="0"
                 mb="0"
                 style={{
                   borderBottom: 'dashed 1px #d2d2d2',
                 }}
               >
-                <Div style={{ width: 115 }}>
+                <Div style={{ width: 120 }}>
                   <Span
                     itemProp="priceCurrency"
                     content="INR"
@@ -114,21 +114,25 @@ const TitlePrice = ({
                     fontSize="20px"
                   >Offer Price</Span>
                 </Div>
-                <Div style={{ width: 'calc(100% - 115px)' }}>
-                  <Span
-                    itemProp="price"
-                    content={discPrice.split(',').join('')}
-                    color="#f98d29"
-                    fontSize="20px"
-                  >
-                    {/* ₹ {offerDetails.offer_price} */}
-                  ₹ 30,000
+                <Div style={{ width: 'calc(100% - 120px)' }}>
+                  <Div>
+                    <Span
+                      itemProp="price"
+                      content={discPrice.split(',').join('')}
+                      color="#f98d29"
+                      fontSize="20px"
+                    >
+                        ₹ {offerDetails.offer_price}
+                      {/* TODO:// @sanjeev Remove static Price */}
+                      30,000
+                    </Span>
+                  </Div>
+                  <Div>
                     <Span
                       fontSize="12px"
                       color="rgba(0, 0, 0, 0.4)"
                       fontFamily="regular"
-                      ml="10px"
-                    >(After Using Coupon {' '}
+                    >(Extra additional 10% of Using Coupon {' '}
                       <Span
                         fontSize="12px"
                         color="#f98d29"
@@ -136,10 +140,11 @@ const TitlePrice = ({
                         tt="uppercase"
                       >
                         {' '}{offerDetails.coupon_code}
+                        {/* TODO:// @sanjeev Remove static Coupon */}
                       ABC123
                       </Span>)
                     </Span>
-                  </Span>
+                  </Div>
                 </Div>
               </HeadingH5>
             </Div>
@@ -153,19 +158,18 @@ const TitlePrice = ({
               >
                 {price !== discPrice &&
                 <Fragment>
-                  <Div style={{ width: 115 }}>
-                    <Span fontSize="16px" color="rgba(0, 0, 0, 0.4)" fontFamily="regular">Total Savings</Span>
+                  <Div style={{ width: 120 }}>
+                    <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings</Span>
                   </Div>
-                  <Div style={{ width: 'calc(100% - 115px)' }}>
+                  <Div style={{ width: 'calc(100% - 120px)' }}>
                     <Span
-                      fontSize="16px"
+                      fontSize="14px"
                       color="rgba(0, 0, 0, 0.4)"
-                      fontFamily="regular"
+                      fontFamily="medium"
                     >₹ {savingsRs}{' '}({savingsPercentage}% OFF)
                     </Span>
                     <Div style={{
                       display: 'flex',
-                      justifyContent: 'space-between',
                       alignItems: 'center',
                       padding: '5px 0',
                       lineHeight: 1.5
@@ -181,6 +185,8 @@ const TitlePrice = ({
                         fontSize="12px"
                         color="rgba(0, 0, 0, 0.4)"
                         fontFamily="regular"
+                        pl="10px"
+                        pr="10px"
                       >{' '}+{' '}
                       </Span>
                       <Span
