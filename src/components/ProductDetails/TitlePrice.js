@@ -109,8 +109,34 @@ const TitlePrice = ({
                     </Div>
                   </Fragment>
                 }
+                {!isOfferExist &&
+                <HeadingH5
+                  itemScope
+                  itemType=""
+                  fontSize="1rem"
+                  color="textDark"
+                  mb="0px"
+                  pb="2px"
+                  mt="0px"
+                  fontFamily="medium"
+                >
+                  { price !== discPrice &&
+                  <Span
+                    fontSize="0.8125em"
+                    color="rgba(0, 0, 0, 0.4)"
+                    ml="0"
+                    fontFamily="regular"
+                    va="text-top"
+                  >{`Saving ₹ ${savingsRs}
+                    (${savingsPercentage}% OFF)`}
+                  </Span>
+                  }
+                </HeadingH5>
+
+                }
               </Row>
-              {isOfferExist &&
+              {!!isOfferExist && price !== discPrice &&
+              <Div>
                 <Div>
                   <HeadingH5
                     itemProp="offers"
@@ -150,7 +176,7 @@ const TitlePrice = ({
                           fontSize="12px"
                           color="rgba(0, 0, 0, 0.4)"
                           fontFamily="regular"
-                        >({`Extra additional ${couponPercentageValue}% OFF, by Using Coupon `}
+                        >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
                           <Span
                             fontSize="12px"
                             color="#f98d29"
@@ -163,59 +189,92 @@ const TitlePrice = ({
                       </Div>
                     </Div>
                   </HeadingH5>
-                </Div>}
-              {price !== discPrice && <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
-                <HeadingH5
-                  itemScope
-                  itemType=""
-                  mb="0px"
-                  mt="0px"
-                  display="flex"
-                >
-                  <Fragment>
-                    <Div style={{ width: 120 }}>
-                      <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings</Span>
-                    </Div>
-                    <Div style={{ width: 'calc(100% - 120px)' }}>
-                      <Span
-                        fontSize="14px"
-                        color="rgba(0, 0, 0, 0.4)"
-                        fontFamily="medium"
-                      >₹{`${(savingsRs)} (${savingsPercentage}% OFF)`}
-                      </Span>
-                      {isOfferExist &&
-                      <Div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '5px 0',
-                        lineHeight: 1.5
-                      }}
-                      >
+                </Div>
+                <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+                  <HeadingH5
+                    itemScope
+                    itemType=""
+                    mb="0px"
+                    mt="0px"
+                    display="flex"
+                  >
+                    <Fragment>
+                      <Div style={{ width: 120 }}>
+                        <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings</Span>
+                      </Div>
+                      <Div style={{ width: 'calc(100% - 120px)' }}>
                         <Span
-                          fontSize="12px"
+                          fontSize="14px"
                           color="rgba(0, 0, 0, 0.4)"
-                          fontFamily="regular"
-                        >₹ {savingTotal}<br /> (Retail Discount)
+                          fontFamily="medium"
+                        >₹{`${(savingsRs)} (${savingsPercentage}% OFF)`}
                         </Span>
-                        <Span
-                          fontSize="12px"
-                          color="rgba(0, 0, 0, 0.4)"
-                          fontFamily="regular"
-                          pl="10px"
-                          pr="10px"
-                        >{' '}+{' '}
-                        </Span>
-                        <Span
-                          fontSize="12px"
-                          color="rgba(0, 0, 0, 0.4)"
-                          fontFamily="regular"
-                        >₹ {offerAmount}<br /> (Limited Time Coupon)
-                        </Span>
-                      </Div>}
-                    </Div>
-                  </Fragment>
-                </HeadingH5>
+                        {isOfferExist &&
+                        <Div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          padding: '5px 0',
+                          lineHeight: 1.5
+                        }}
+                        >
+                          <Span
+                            fontSize="12px"
+                            color="rgba(0, 0, 0, 0.4)"
+                            fontFamily="regular"
+                          >₹ {savingTotal}<br /> (Retail Discount)
+                          </Span>
+                          <Span
+                            fontSize="12px"
+                            color="rgba(0, 0, 0, 0.4)"
+                            fontFamily="regular"
+                            pl="10px"
+                            pr="10px"
+                          >{' '}+{' '}
+                          </Span>
+                          <Span
+                            fontSize="12px"
+                            color="rgba(0, 0, 0, 0.4)"
+                            fontFamily="regular"
+                          >₹ {offerAmount}<br /> (Limited Time Coupon)
+                          </Span>
+                        </Div>}
+                      </Div>
+                    </Fragment>
+                  </HeadingH5>
+                </Div>
               </Div>}
+              {
+                !!isOfferExist && !(price !== discPrice) && <Div>
+                  {/* this will be displayed when no discPrice but offerPrice */}
+                  <Div style={{ width: 120 }}>
+                    <Span
+                      itemProp="priceCurrency"
+                      content="INR"
+                      color="#f98d29"
+                      fontSize="20px"
+                    >Offer Price</Span>
+                  </Div>
+                  <Div>
+                    <Span
+                      itemProp="price"
+                      content={discPrice.split(',').join('')}
+                      color="#f98d29"
+                      fontSize="20px"
+                    >
+                      ₹ {offerPrice}
+                    </Span>
+                  </Div>
+                  <Div>
+                    <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings : </Span>
+                    <Span
+                      fontSize="12px"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                    >₹ {`${offerAmount} (${couponPercentageValue}% OFF)`}
+                    </Span>
+                  </Div>
+                </Div>
+              }
             </Div>
             <ReviewWrapper col="3" ta="right">
               {ratings !== 0 &&
