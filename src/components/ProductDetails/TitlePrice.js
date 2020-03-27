@@ -83,36 +83,36 @@ const TitlePrice = ({
               display="flex"
               mt="0"
               mb="0"
+              pb="5px"
             >
               <Div style={{ width: 75 }}>
                 <Span
                   itemProp="priceCurrency"
                   content="INR"
-                  fontSize="18px"
-                >Price : </Span>
+                  fontSize={offerDetails.offerPrice > 0 ? '18px' : '20px'}
+                  color={offerDetails.offerPrice > 0 ? 'rgba(0,0,0,0.6)' : '#f98d29'}
+                >Price</Span>
               </Div>
               <Div style={{ width: 'calc(100% - 75px)' }}>
                 <Span
                   itemProp="price"
                   content={discPrice.split(',').join('')}
-                  fontSize="18px"
+                  fontSize={offerDetails.offerPrice > 0 ? '18px' : '20px'}
+                  color={offerDetails.offerPrice > 0 ? 'rgba(0,0,0,0.6)' : '#f98d29'}
                 >₹ {discPrice}</Span>
               </Div>
             </HeadingH5>
-            <Div>
+            {offerDetails.offerPrice > 0 &&
               <HeadingH5
                 itemProp="offers"
                 itemScope
                 itemType="http://schema.org/Offer"
                 ellipsis={false}
                 display="flex"
-                pt="5px"
+                pt="0"
                 pb="5px"
                 mt="0"
                 mb="0"
-                style={{
-                  borderBottom: 'dashed 1px #d2d2d2',
-                }}
               >
                 <Div style={{ width: 120 }}>
                   <Span
@@ -130,9 +130,7 @@ const TitlePrice = ({
                       color="#f98d29"
                       fontSize="20px"
                     >
-                        ₹ {offerDetails.offer_price}
-                      {/* TODO:// @sanjeev Remove static Price */}
-                      30,000
+                      ₹ {offerDetails.offerPrice}
                     </Span>
                   </Div>
                   <Div>
@@ -147,16 +145,14 @@ const TitlePrice = ({
                         fontFamily="regular"
                         tt="uppercase"
                       >
-                        {' '}{offerDetails.coupon_code}
-                        {/* TODO:// @sanjeev Remove static Coupon */}
-                      ABC123
+                        {' '}{offerDetails.couponCode}
                       </Span>)
                     </Span>
                   </Div>
                 </Div>
               </HeadingH5>
-            </Div>
-            <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+            }
+            <Div style={{ borderBottom: 'dashed 1px #d2d2d2', borderTop: 'dashed 1px #d2d2d2' }}>
               <HeadingH5
                 itemScope
                 itemType=""
@@ -174,105 +170,44 @@ const TitlePrice = ({
                       fontSize="14px"
                       color="rgba(0, 0, 0, 0.4)"
                       fontFamily="medium"
-                    >₹ {savingsRs}{' '}({savingsPercentage}% OFF)
-                    </Span>
-                    <Div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      padding: '5px 0',
-                      lineHeight: 1.5
-                    }}
                     >
-                      <Span
-                        fontSize="12px"
-                        color="rgba(0, 0, 0, 0.4)"
-                        fontFamily="regular"
-                      >₹ 17,060 <br /> (Retail Discount)
-                      </Span>
-                      <Span
-                        fontSize="12px"
-                        color="rgba(0, 0, 0, 0.4)"
-                        fontFamily="regular"
-                        pl="10px"
-                        pr="10px"
-                      >{' '}+{' '}
-                      </Span>
-                      <Span
-                        fontSize="12px"
-                        color="rgba(0, 0, 0, 0.4)"
-                        fontFamily="regular"
-                      >₹ 14,800 <br /> (Limited Time Coupon)
-                      </Span>
-                    </Div>
+                      ₹ {savingsRs}{' '}({savingsPercentage}% OFF)
+                    </Span>
+                    {offerDetails.offerPrice > 0 &&
+                      <Div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '5px 0',
+                        lineHeight: 1.5
+                      }}
+                      >
+                        <Span
+                          fontSize="12px"
+                          color="rgba(0, 0, 0, 0.4)"
+                          fontFamily="regular"
+                        >₹ 17,060 <br /> (Retail Discount)
+                        </Span>
+                        <Span
+                          fontSize="12px"
+                          color="rgba(0, 0, 0, 0.4)"
+                          fontFamily="regular"
+                          pl="10px"
+                          pr="10px"
+                        >{' '}+{' '}
+                        </Span>
+                        <Span
+                          fontSize="12px"
+                          color="rgba(0, 0, 0, 0.4)"
+                          fontFamily="regular"
+                        >₹ 14,800 <br /> (Limited Time Coupon)
+                        </Span>
+                      </Div>
+                    }
                   </Div>
                 </Fragment>
                 }
               </HeadingH5>
             </Div>
-            {
-              !!offerDetails.offerPrice &&
-              !!offerDetails.couponCode &&
-              <Div>
-                <HeadingH5
-                  itemProp="offers"
-                  itemScope
-                  itemType="http://schema.org/Offer"
-                  fontSize="1.6rem"
-                  color="primary"
-                  mb="0px"
-                  pb="5px"
-                  mt="10px"
-                  pt="10px"
-                  fontFamily="medium"
-                  ellipsis={false}
-                  display="flex"
-                  style={{ borderTop: '1px solid #e9e9e9' }}
-                >
-                  <Span
-                    va="text-top"
-                    itemProp="priceCurrency"
-                    content="INR"
-                    color="#f98d29"
-                    fontSize="1rem"
-                    pr="10px"
-                    pt="8px"
-                  >Offer Price : </Span>
-                  <Span
-                    va="text-top"
-                    itemProp="priceCurrency"
-                    content="INR"
-                    color="#f98d29"
-                    fontSize="1.6rem"
-                  >₹ </Span>
-                  <Span
-                    itemProp="price"
-                    va="text-top"
-                    content={discPrice.split(',').join('')}
-                    color="#f98d29"
-                    fontSize="1.6rem"
-                  > {offerDetails.offerPrice}</Span>
-                </HeadingH5>
-                <Div>
-                  <Span
-                    fontSize="0.8125em"
-                    color="rgba(0, 0, 0, 0.4)"
-                    ml="0"
-                    fontFamily="regular"
-                    va="text-top"
-                  >After Using Coupon
-                  </Span>
-                  <Span
-                    fontSize="0.8125em"
-                    color="#f98d29"
-                    ml="0"
-                    fontFamily="regular"
-                    va="text-top"
-                    tt="uppercase"
-                  >{' '}{offerDetails.couponCode}
-                  </Span>
-                </Div>
-              </Div>
-            }
           </Div>
           <ReviewWrapper col="3" ta="right">
             {ratings !== 0 &&
