@@ -132,7 +132,6 @@ const TitlePrice = ({
                   </Span>
                   }
                 </HeadingH5>
-
                 }
               </Row>
               {!!isOfferExist && price !== discPrice &&
@@ -158,7 +157,7 @@ const TitlePrice = ({
                         content="INR"
                         color="#f98d29"
                         fontSize="20px"
-                      >Offer Price</Span>
+                      >Offer Price :</Span>
                     </Div>
                     <Div style={{ width: 'calc(100% - 120px)' }}>
                       <Div>
@@ -200,7 +199,7 @@ const TitlePrice = ({
                   >
                     <Fragment>
                       <Div style={{ width: 120 }}>
-                        <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings</Span>
+                        <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings :</Span>
                       </Div>
                       <Div style={{ width: 'calc(100% - 120px)' }}>
                         <Span
@@ -243,37 +242,34 @@ const TitlePrice = ({
                   </HeadingH5>
                 </Div>
               </Div>}
-              {
-                !!isOfferExist && !(price !== discPrice) && <Div>
-                  {/* this will be displayed when no discPrice but offerPrice */}
-                  <Div style={{ width: 120 }}>
-                    <Span
-                      itemProp="priceCurrency"
-                      content="INR"
-                      color="#f98d29"
-                      fontSize="20px"
-                    >Offer Price</Span>
-                  </Div>
-                  <Div>
-                    <Span
-                      itemProp="price"
-                      content={discPrice.split(',').join('')}
-                      color="#f98d29"
-                      fontSize="20px"
-                    >
+              {!!isOfferExist && !(price !== discPrice) && <Div>
+                {/* this will be displayed when no discPrice but offerPrice */}
+                <Div>
+                  <Span
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="20px"
+                  >Offer Price : </Span>
+                  <Span
+                    itemProp="price"
+                    content={discPrice.split(',').join('')}
+                    color="#f98d29"
+                    fontSize="20px"
+                  >
                       ₹ {offerPrice}
-                    </Span>
-                  </Div>
-                  <Div>
-                    <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings : </Span>
-                    <Span
-                      fontSize="12px"
-                      color="rgba(0, 0, 0, 0.4)"
-                      fontFamily="regular"
-                    >₹ {`${offerAmount} (${couponPercentageValue}% OFF)`}
-                    </Span>
-                  </Div>
+                  </Span>
                 </Div>
+                <Div>
+                  <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings : </Span>
+                  <Span
+                    fontSize="12px"
+                    color="rgba(0, 0, 0, 0.4)"
+                    fontFamily="regular"
+                  >₹ {`${offerAmount} (${couponPercentageValue}% OFF)`}
+                  </Span>
+                </Div>
+              </Div>
               }
             </Div>
             <ReviewWrapper col="3" ta="right">
