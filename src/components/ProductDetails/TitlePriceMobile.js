@@ -75,31 +75,31 @@ const TitlePrice = ({
             <Div col="12">
               <Row ml="0" mr="0">
                 {price !== discPrice &&
-                  <Fragment>
-                    <Div style={{ width: 75 }}>
-                      <Span
-                        fontSize="1rem"
-                        color="rgba(0, 0, 0, 0.4)"
-                        fontFamily="regular"
-                      >M.R.P :</Span>
-                    </Div>
-                    <Div style={{ width: 'calc(100% - 75px)' }}>
-                      <Span
-                        fontSize="1rem"
-                        color="rgba(0, 0, 0, 0.4)"
-                        fontFamily="regular"
-                        type="lt"
-                      >₹ {price}</Span>
-                      <Span
-                        fontSize="0.75rem"
-                        color="rgba(0, 0, 0, 0.4)"
-                        ml="10px"
-                        fontFamily="regular"
-                        lh="2.4"
-                      >(incl. of all taxes)
-                      </Span>
-                    </Div>
-                  </Fragment>
+                <Fragment>
+                  <Div style={{ width: 75 }}>
+                    <Span
+                      fontSize="1rem"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                    >M.R.P :</Span>
+                  </Div>
+                  <Div style={{ width: 'calc(100% - 75px)' }}>
+                    <Span
+                      fontSize="1rem"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                      type="lt"
+                    >₹ {price}</Span>
+                    <Span
+                      fontSize="0.75rem"
+                      color="rgba(0, 0, 0, 0.4)"
+                      ml="10px"
+                      fontFamily="regular"
+                      lh="2.4"
+                    >(incl. of all taxes)
+                    </Span>
+                  </Div>
+                </Fragment>
                 }
                 {!isOfferExist &&
                 <HeadingH5
@@ -135,51 +135,46 @@ const TitlePrice = ({
                     itemType="http://schema.org/Offer"
                     ellipsis={false}
                     display="flex"
-                    pt="5px"
-                    pb="5px"
+                    pt="0"
+                    pb="2px"
                     mt="0"
                     mb="0"
-                    style={{
-                      borderBottom: 'dashed 1px #d2d2d2',
-                    }}
                   >
-                    <Div style={{ width: 105 }}>
+                    <Div style={{ width: 110 }}>
                       <Span
                         itemProp="priceCurrency"
                         content="INR"
                         color="#f98d29"
-                        fontSize="20px"
-                      >Offer Price</Span>
+                        fontSize="18px"
+                      >Offer Price :</Span>
                     </Div>
-                    <Div style={{ width: 'calc(100% - 105px)' }}>
-                      <Div>
-                        <Span
-                          itemProp="price"
-                          content={discPrice.split(',').join('')}
-                          color="#f98d29"
-                          fontSize="20px"
-                        >
+                    <Div style={{ width: 'calc(100% - 110px)' }}>
+                      <Span
+                        itemProp="price"
+                        content={discPrice.split(',').join('')}
+                        color="#f98d29"
+                        fontSize="18px"
+                      >
                           ₹ {offerPrice}
-                        </Span>
-                      </Div>
-                      <Div>
-                        <Span
-                          fontSize="12px"
-                          color="rgba(0, 0, 0, 0.4)"
-                          fontFamily="regular"
-                        >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
-                          <Span
-                            fontSize="12px"
-                            color="#f98d29"
-                            fontFamily="regular"
-                            tt="uppercase"
-                          >
-                            {` ${couponCode}`}
-                          </Span>)
-                        </Span>
-                      </Div>
+                      </Span>
                     </Div>
                   </HeadingH5>
+                  <Div pb="5px" style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+                    <Span
+                      fontSize="12px"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                    >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
+                      <Span
+                        fontSize="12px"
+                        color="#f98d29"
+                        fontFamily="regular"
+                        tt="uppercase"
+                      >
+                        {` ${couponCode}`}
+                      </Span>)
+                    </Span>
+                  </Div>
                 </Div>
                 <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
                   <HeadingH5
@@ -190,10 +185,10 @@ const TitlePrice = ({
                     display="flex"
                   >
                     <Fragment>
-                      <Div style={{ width: 105 }}>
-                        <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings</Span>
+                      <Div style={{ width: 110 }}>
+                        <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings :</Span>
                       </Div>
-                      <Div style={{ width: 'calc(100% - 105px)' }}>
+                      <Div style={{ width: 'calc(100% - 110px)' }}>
                         <Span
                           fontSize="14px"
                           color="rgba(0, 0, 0, 0.4)"
@@ -233,37 +228,51 @@ const TitlePrice = ({
                     </Fragment>
                   </HeadingH5>
                 </Div>
-              </Div>
-              }
-              {!!isOfferExist && !(price !== discPrice) &&
+              </Div>}
+              {!!isOfferExist && !(price !== discPrice) && <Div>
+                {/* this will be displayed when no discPrice but offerPrice */}
                 <Div>
-                  {/* this will be displayed when no discPrice but offerPrice */}
-                  <Div>
-                    <Span
-                      itemProp="priceCurrency"
-                      content="INR"
-                      color="#f98d29"
-                      fontSize="20px"
-                    >Offer Price :</Span>
-                    <Span
-                      itemProp="price"
-                      content={discPrice.split(',').join('')}
-                      color="#f98d29"
-                      fontSize="20px"
-                    >
+                  <Span
+                    itemProp="priceCurrency"
+                    content="INR"
+                    color="#f98d29"
+                    fontSize="20px"
+                  >Offer Price : </Span>
+                  <Span
+                    itemProp="price"
+                    content={discPrice.split(',').join('')}
+                    color="#f98d29"
+                    fontSize="20px"
+                  >
                       ₹ {offerPrice}
-                    </Span>
-                  </Div>
-                  <Div>
-                    <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings :</Span>
+                  </Span>
+                </Div>
+                <Div pb="5px" style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+                  <Span
+                    fontSize="12px"
+                    color="rgba(0, 0, 0, 0.4)"
+                    fontFamily="regular"
+                  >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
                     <Span
                       fontSize="12px"
-                      color="rgba(0, 0, 0, 0.4)"
+                      color="#f98d29"
                       fontFamily="regular"
-                    >₹ {`${offerAmount} (${couponPercentageValue}% OFF)`}
-                    </Span>
-                  </Div>
+                      tt="uppercase"
+                    >
+                      {` ${couponCode}`}
+                    </Span>)
+                  </Span>
                 </Div>
+                <Div>
+                  <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Savings : </Span>
+                  <Span
+                    fontSize="12px"
+                    color="rgba(0, 0, 0, 0.4)"
+                    fontFamily="medium"
+                  >₹ {`${offerAmount} (${couponPercentageValue}% OFF)`}
+                  </Span>
+                </Div>
+              </Div>
               }
             </Div>
             <Div col="12" ta="right" mt="2px">

@@ -144,12 +144,9 @@ const TitlePrice = ({
                     ellipsis={false}
                     display="flex"
                     pt="5px"
-                    pb="5px"
+                    pb="2px"
                     mt="0"
                     mb="0"
-                    style={{
-                      borderBottom: 'dashed 1px #d2d2d2',
-                    }}
                   >
                     <Div style={{ width: 120 }}>
                       <Span
@@ -160,34 +157,32 @@ const TitlePrice = ({
                       >Offer Price :</Span>
                     </Div>
                     <Div style={{ width: 'calc(100% - 120px)' }}>
-                      <Div>
-                        <Span
-                          itemProp="price"
-                          content={discPrice.split(',').join('')}
-                          color="#f98d29"
-                          fontSize="20px"
-                        >
+                      <Span
+                        itemProp="price"
+                        content={discPrice.split(',').join('')}
+                        color="#f98d29"
+                        fontSize="20px"
+                      >
                           ₹ {offerPrice}
-                        </Span>
-                      </Div>
-                      <Div>
-                        <Span
-                          fontSize="12px"
-                          color="rgba(0, 0, 0, 0.4)"
-                          fontFamily="regular"
-                        >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
-                          <Span
-                            fontSize="12px"
-                            color="#f98d29"
-                            fontFamily="regular"
-                            tt="uppercase"
-                          >
-                            {` ${couponCode}`}
-                          </Span>)
-                        </Span>
-                      </Div>
+                      </Span>
                     </Div>
                   </HeadingH5>
+                  <Div pb="5px" style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
+                    <Span
+                      fontSize="12px"
+                      color="rgba(0, 0, 0, 0.4)"
+                      fontFamily="regular"
+                    >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
+                      <Span
+                        fontSize="12px"
+                        color="#f98d29"
+                        fontFamily="regular"
+                        tt="uppercase"
+                      >
+                        {` ${couponCode}`}
+                      </Span>)
+                    </Span>
+                  </Div>
                 </Div>
                 <Div style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
                   <HeadingH5
@@ -260,12 +255,28 @@ const TitlePrice = ({
                       ₹ {offerPrice}
                   </Span>
                 </Div>
-                <Div>
-                  <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Total Savings : </Span>
+                <Div pb="5px" style={{ borderBottom: 'dashed 1px #d2d2d2' }}>
                   <Span
                     fontSize="12px"
                     color="rgba(0, 0, 0, 0.4)"
                     fontFamily="regular"
+                  >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
+                    <Span
+                      fontSize="12px"
+                      color="#f98d29"
+                      fontFamily="regular"
+                      tt="uppercase"
+                    >
+                      {` ${couponCode}`}
+                    </Span>)
+                  </Span>
+                </Div>
+                <Div>
+                  <Span fontSize="14px" color="rgba(0, 0, 0, 0.4)" fontFamily="medium">Savings : </Span>
+                  <Span
+                    fontSize="12px"
+                    color="rgba(0, 0, 0, 0.4)"
+                    fontFamily="medium"
                   >₹ {`${offerAmount} (${couponPercentageValue}% OFF)`}
                   </Span>
                 </Div>
