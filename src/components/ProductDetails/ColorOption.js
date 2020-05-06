@@ -55,7 +55,7 @@ const ColorOption = ({
           key={String(index)}
         >
           <ImgWrapper>
-            <ImageShimmer src={`${item.image}.jpg`} height="60px">
+            <ImageShimmer src={`${item.swatch_image || `${item.image}.jpg`}`} height="60px">
               {imageURL => (<ProductImg
                 src={imageURL}
                 alt={item.meta.name}
