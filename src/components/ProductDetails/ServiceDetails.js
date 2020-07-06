@@ -15,8 +15,7 @@ import truck from '../../static/truck.svg';
 const getComponent = (children, key) => children.filter(comp => comp.key === key);
 
 const ServiceDetails = ({
-  children, deliverBy, shipping, pincode, emiStarting, isEmiAvailable,
-  loading
+  children, deliverBy, shipping, pincode, emiStarting, isEmiAvailable, loading, shippingCharge
 }) => (
   <Section mb="0" pr="0" pl="0" pt="0" pb="0.625rem">
     <Row display="block" mb="0.9375rem" mr="0" ml="0">
@@ -62,7 +61,7 @@ const ServiceDetails = ({
           fontSize="0.825em"
           color="secondary"
           display="contents"
-        >{shipping && Number(shipping) > 499 ? 'Free Shipping' : 'Shipping Charge Rs.50 ' }</Label>
+        >{shipping && Number(shipping) > 499 ? 'Free Shipping' : `Shipping Charge Rs.${shippingCharge}` }</Label>
       </Div>
     </Row>
   </Section>
@@ -72,6 +71,7 @@ ServiceDetails.propTypes = {
   deliverBy: PropTypes.string.isRequired,
   emiStarting: PropTypes.string.isRequired,
   shipping: PropTypes.string.isRequired,
+  shippingCharge: PropTypes.string.isRequired,
   children: PropTypes.objectOf(PropTypes.any).isRequired,
   pincode: PropTypes.string.isRequired,
   isEmiAvailable: PropTypes.bool.isRequired,
