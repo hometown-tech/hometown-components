@@ -164,7 +164,7 @@ const TitlePrice = ({
                       fontSize="12px"
                       color="rgba(0, 0, 0, 0.4)"
                       fontFamily="regular"
-                    >({`Price Incl. of Extra ${couponPercentageValue}% OFF, Using Coupon `}
+                    >({`Price Incl. of Extra ${couponPercentageValue}% Off, Using Coupon `}
                       <Span
                         fontSize="12px"
                         color="#f98d29"
@@ -252,7 +252,7 @@ const TitlePrice = ({
                     fontSize="12px"
                     color="rgba(0, 0, 0, 0.4)"
                     fontFamily="regular"
-                  >({`Extra ${couponPercentageValue}% OFF, Use Coupon `}
+                  >({`Price Incl. of Extra ${couponPercentageValue}% Off, Using Coupon `}
                     <Span
                       fontSize="12px"
                       color="#f98d29"
