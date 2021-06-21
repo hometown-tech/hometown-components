@@ -11,6 +11,7 @@ import ReactStars from 'react-stars';
 
 const TitlePrice = ({
   name,
+  brand,
   price,
   discPrice,
   savingsRs,
@@ -45,6 +46,19 @@ const TitlePrice = ({
           >
             {name}
           </Heading>
+          {brand && <Heading
+            itemProp="name"
+            fontSize="14px"
+            color="textLight"
+            mb="0"
+            mt="0"
+            lh="1.7"
+            fontFamily="light"
+            ellipsis={false}
+            pb="5px"
+          >
+            By {brand}
+          </Heading>}
           <HeadingH5
             itemProp="offers"
             itemScope
@@ -319,6 +333,7 @@ const TitlePrice = ({
 
 TitlePrice.propTypes = {
   name: PropTypes.string,
+  brand: PropTypes.string,
   price: PropTypes.string,
   discPrice: PropTypes.string,
   savingsPercentage: PropTypes.string,
@@ -333,6 +348,7 @@ TitlePrice.propTypes = {
 TitlePrice.defaultProps = {
   savingTotal: 0,
   name: '',
+  brand: '',
   price: '',
   discPrice: '',
   savingsPercentage: '',
