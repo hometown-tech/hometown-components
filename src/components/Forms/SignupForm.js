@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import Row from 'components/Row';
 import Div from 'components/Div';
-import { Label } from 'components/Label';
+import { Label, FeedBackMessage } from 'components/Label';
 import { Link } from 'react-router-dom';
 import FormInput from './FormInput';
+
+// eslint-disable-next-line react/prop-types
+const Date = ({ date }) => (
+  <div>
+    { date }
+  </div>
+);
 
 export default class SignupForm extends Component {
   render() {
@@ -13,11 +20,14 @@ export default class SignupForm extends Component {
       name,
       email,
       phone,
+      date,
       password,
+      dob,
       onChangeName,
       onChangeEmail,
       onChangePhone,
       onChangePassword,
+      onChangeDob,
       emailFeedBackError,
       emailFeedBackMessage,
       nameFeedBackError,
@@ -26,10 +36,12 @@ export default class SignupForm extends Component {
       phoneFeedBackMessage,
       passwordFeedBackError,
       passwordFeedBackMessage,
+      dobFeedBackMessage,
+      dobFeedBackError,
       onSubmitSignup,
       loading,
       loginUrl,
-      phonemandatory
+      phonemandatory,
     } = this.props;
     return (
       <form onSubmit={onSubmitSignup}>
@@ -69,6 +81,17 @@ export default class SignupForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
+        <Label mb="10px">Date of Birth * </Label>
+        <Date
+          date={date}
+          placeholder=""
+          selected={dob}
+          onChange={onChangeDob}
+          feedBackError={dobFeedBackError}
+          feedBackMessage={dobFeedBackMessage}
+        />
+        {dobFeedBackError &&
+        <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
         <Row ml="0" mr="0" mt="1.25rem">
           <Div col="8" pt="6px">
             <Label color="textDark" mr="0.3126rem">
@@ -101,6 +124,9 @@ SignupForm.defaultProps = {
   email: '',
   phone: '',
   password: '',
+  date: '',
+  dob: '',
+  selected: '',
   emailFeedBackError: false,
   emailFeedBackMessage: '',
   nameFeedBackError: PropTypes.bool,
@@ -109,10 +135,16 @@ SignupForm.defaultProps = {
   phoneFeedBackMessage: '',
   passwordFeedBackError: false,
   passwordFeedBackMessage: '',
+  dobFeedBackMessage: '',
+  dobFeedBackError: false,
+  feedBackMessage: '',
+  feedBackError: '',
+  type: '',
   onChangeName: () => {},
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangePassword: () => {},
+  onChangeDob: () => {},
   onSubmitSignup: () => {},
   loading: false,
   loginUrl: '',
@@ -125,7 +157,10 @@ SignupForm.propTypes = {
   onChangePhone: PropTypes.func,
   onChangePassword: PropTypes.func,
   onSubmitSignup: PropTypes.func,
+  onChangeDob: PropTypes.func,
   name: PropTypes.string,
+  date: PropTypes.string,
+  dob: PropTypes.string,
   nameFeedBackError: PropTypes.bool,
   nameFeedBackMessage: PropTypes.string,
   email: PropTypes.string,
@@ -137,6 +172,8 @@ SignupForm.propTypes = {
   phoneFeedBackMessage: PropTypes.string,
   passwordFeedBackError: PropTypes.bool,
   passwordFeedBackMessage: PropTypes.string,
+  dobFeedBackMessage: PropTypes.string,
+  dobFeedBackError: PropTypes.bool,
   loading: PropTypes.bool,
   loginUrl: PropTypes.string,
   phonemandatory: PropTypes.bool,
