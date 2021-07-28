@@ -24,6 +24,7 @@ export default class ProfileForm extends Component {
       fullNameFeedBackError,
       fullNameFeedBackMessage,
       onSubmitProfile,
+      date,
       response
     } = this.props;
     const {
@@ -51,6 +52,7 @@ export default class ProfileForm extends Component {
           feedBackMessage={emailFeedBackMessage}
           readOnly
         />
+        {date}
         <FormInput
           style={{ backgroundColor: '#cccccc38' }}
           readOnly
@@ -120,6 +122,7 @@ ProfileForm.defaultProps = {
   onChangePhone: () => {},
   onChangeFullName: () => {},
   onSubmitProfile: () => {},
+  date: () => {},
   response: {}
 };
 
@@ -129,6 +132,7 @@ ProfileForm.propTypes = {
   onChangeFullName: PropTypes.func,
   onSubmitProfile: PropTypes.func,
   onChangeGST: PropTypes.func,
+  date: PropTypes.func,
   email: PropTypes.string,
   phone: PropTypes.string,
   fullName: PropTypes.string,
@@ -141,5 +145,5 @@ ProfileForm.propTypes = {
   phoneFeedBackMessage: PropTypes.string,
   fullNameFeedBackError: PropTypes.bool,
   fullNameFeedBackMessage: PropTypes.string,
-  response: PropTypes.object
+  response: PropTypes.object,
 };
