@@ -65,7 +65,7 @@ export default class ProfileForm extends Component {
           feedBackMessage={phoneFeedBackMessage}
         />
         <FormInput
-          label="GSTNumber"
+          label="GST Number"
           type="text"
           placeholder=""
           onChange={onChangeGST}
@@ -132,6 +132,7 @@ ProfileForm.propTypes = {
   onChangeFullName: PropTypes.func,
   onSubmitProfile: PropTypes.func,
   onChangeGST: PropTypes.func,
+  date: PropTypes.func,
   email: PropTypes.string,
   phone: PropTypes.string,
   fullName: PropTypes.string,
@@ -145,5 +146,4 @@ ProfileForm.propTypes = {
   fullNameFeedBackError: PropTypes.bool,
   fullNameFeedBackMessage: PropTypes.string,
   response: PropTypes.object,
-  date: PropTypes.func,
 };
