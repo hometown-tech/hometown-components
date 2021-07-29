@@ -128,10 +128,8 @@ SignupForm.propTypes = {
   onChangePhone: PropTypes.func,
   onChangePassword: PropTypes.func,
   onSubmitSignup: PropTypes.func,
-  // onChangeDob: PropTypes.func,
   name: PropTypes.string,
   date: PropTypes.func,
-  // dob: PropTypes.string,
   nameFeedBackError: PropTypes.bool,
   nameFeedBackMessage: PropTypes.string,
   email: PropTypes.string,
@@ -146,5 +144,4 @@ SignupForm.propTypes = {
   loading: PropTypes.bool,
   loginUrl: PropTypes.string,
   phonemandatory: PropTypes.bool,
-
 };
