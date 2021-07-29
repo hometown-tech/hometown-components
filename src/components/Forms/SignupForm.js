@@ -13,6 +13,7 @@ export default class SignupForm extends Component {
       name,
       email,
       phone,
+      date,
       password,
       onChangeName,
       onChangeEmail,
@@ -29,7 +30,7 @@ export default class SignupForm extends Component {
       onSubmitSignup,
       loading,
       loginUrl,
-      phonemandatory
+      phonemandatory,
     } = this.props;
     return (
       <form onSubmit={onSubmitSignup}>
@@ -69,6 +70,7 @@ export default class SignupForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
+        {date}
         <Row ml="0" mr="0" mt="1.25rem">
           <Div col="8" pt="6px">
             <Label color="textDark" mr="0.3126rem">
@@ -113,6 +115,7 @@ SignupForm.defaultProps = {
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangePassword: () => {},
+  date: () => {},
   onSubmitSignup: () => {},
   loading: false,
   loginUrl: '',
@@ -126,6 +129,7 @@ SignupForm.propTypes = {
   onChangePassword: PropTypes.func,
   onSubmitSignup: PropTypes.func,
   name: PropTypes.string,
+  date: PropTypes.func,
   nameFeedBackError: PropTypes.bool,
   nameFeedBackMessage: PropTypes.string,
   email: PropTypes.string,
