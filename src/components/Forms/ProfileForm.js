@@ -23,6 +23,8 @@ export default class ProfileForm extends Component {
       phoneFeedBackMessage,
       fullNameFeedBackError,
       fullNameFeedBackMessage,
+      dobFeedBackError,
+      dobFeedBackMessage,
       onSubmitProfile,
       date,
       response
@@ -53,6 +55,7 @@ export default class ProfileForm extends Component {
           readOnly
         />
         {date}
+        {dobFeedBackError && <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
         <FormInput
           style={{ backgroundColor: '#cccccc38' }}
           readOnly
@@ -117,6 +120,8 @@ ProfileForm.defaultProps = {
   phoneFeedBackMessage: '',
   fullNameFeedBackError: false,
   fullNameFeedBackMessage: '',
+  dobFeedBackMessage: '',
+  dobFeedBackError: false,
   onChangeEmail: () => {},
   onChangeGST: () => {},
   onChangePhone: () => {},
@@ -145,5 +150,7 @@ ProfileForm.propTypes = {
   phoneFeedBackMessage: PropTypes.string,
   fullNameFeedBackError: PropTypes.bool,
   fullNameFeedBackMessage: PropTypes.string,
+  dobFeedBackError: PropTypes.bool,
+  dobFeedBackMessage: PropTypes.string,
   response: PropTypes.object,
 };
