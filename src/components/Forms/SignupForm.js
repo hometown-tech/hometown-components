@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
 import Row from 'components/Row';
 import Div from 'components/Div';
-import { Label } from 'components/Label';
+import { Label, FeedBackMessage } from 'components/Label';
 import { Link } from 'react-router-dom';
 import FormInput from './FormInput';
 
@@ -31,6 +31,8 @@ export default class SignupForm extends Component {
       loading,
       loginUrl,
       phonemandatory,
+      dobFeedBackMessage,
+      dobFeedBackError
     } = this.props;
     return (
       <form onSubmit={onSubmitSignup}>
@@ -71,6 +73,7 @@ export default class SignupForm extends Component {
           feedBackMessage={passwordFeedBackMessage}
         />
         {date}
+        {dobFeedBackError && <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
         <Row ml="0" mr="0" mt="1.25rem">
           <Div col="8" pt="6px">
             <Label color="textDark" mr="0.3126rem">
@@ -120,6 +123,8 @@ SignupForm.defaultProps = {
   loading: false,
   loginUrl: '',
   phonemandatory: true,
+  dobFeedBackMessage: '',
+  dobFeedBackError: false,
 };
 
 SignupForm.propTypes = {
@@ -144,4 +149,6 @@ SignupForm.propTypes = {
   loading: PropTypes.bool,
   loginUrl: PropTypes.string,
   phonemandatory: PropTypes.bool,
+  dobFeedBackMessage: PropTypes.string,
+  dobFeedBackError: PropTypes.bool,
 };
