@@ -15,10 +15,14 @@ export default class SignupForm extends Component {
       phone,
       date,
       password,
+      gender,
+      city,
       onChangeName,
       onChangeEmail,
       onChangePhone,
       onChangePassword,
+      onChangeGender,
+      onChangeCity,
       emailFeedBackError,
       emailFeedBackMessage,
       nameFeedBackError,
@@ -27,10 +31,16 @@ export default class SignupForm extends Component {
       phoneFeedBackMessage,
       passwordFeedBackError,
       passwordFeedBackMessage,
+      genderFeedBackError,
+      genderFeedBackMessage,
+      cityFeedBackError,
+      cityFeedBackMessage,
       onSubmitSignup,
       loading,
       loginUrl,
       phonemandatory,
+      onChangePolicy,
+      policyAccepted,
       dobFeedBackMessage,
       dobFeedBackError
     } = this.props;
@@ -72,8 +82,95 @@ export default class SignupForm extends Component {
           feedBackError={passwordFeedBackError}
           feedBackMessage={passwordFeedBackMessage}
         />
+        <FormInput
+          label="City"
+          type="text"
+          name="city"
+          placeholder=""
+          onChange={onChangeCity}
+          value={city}
+          feedBackError={cityFeedBackError}
+          feedBackMessage={cityFeedBackMessage}
+        />
         {date}
         {dobFeedBackError && <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
+        <Label
+          mb={40}
+          sx={{
+            color: 'textPrimary',
+            fontSize: '17px',
+            lineHeight: '20px',
+            textAlign: 'left'
+          }}
+        >
+          Gender
+        </Label>
+        <Row my={20} mx={0} mt="5px" mb="5px">
+          <Div col="3" ml="20px">
+            <Label htmlFor="genderMale">
+              <Div
+                as="input"
+                type="radio"
+                value="male"
+                checked={gender === 'male'}
+                name="gender"
+                id="genderMale"
+                mr={10}
+                onChange={onChangeGender}
+              />
+           Male</Label>
+          </Div>
+          <Div col="3">
+            <Div
+              as="input"
+              type="radio"
+              value="female"
+              checked={gender === 'female'}
+              name="gender"
+              id="genderFemale"
+              mr={10}
+              onChange={onChangeGender}
+            />
+            <Label htmlFor="genderFemale">Female</Label>
+          </Div>
+          <Div col="3">
+            <Div
+              as="input"
+              id="transgender"
+              type="radio"
+              value="transgender"
+              checked={gender === 'transgender'}
+              name="gender"
+              mr={10}
+              onChange={onChangeGender}
+            />
+            <Label htmlFor="transgender">Transgender</Label>
+          </Div>
+          {genderFeedBackError && <Label>{genderFeedBackMessage}</Label>}
+        </Row>
+        <Row ml="15px">
+          <Div
+            as="input"
+            type="checkbox"
+            id="readTnc"
+            onChange={onChangePolicy}
+          />
+          <Label htmlFor="readTnc" />
+          <Label htmlFor="readTnc" textAlign="center" fontSize={16} pl={9}>I have read and agree to </Label>
+          <a href="/privacy-policy" target="_blank">
+            <Label
+              textAlign="center"
+              fontSize={16}
+              pl={4}
+              pt={1}
+              color="primary"
+              ml="3px"
+              sx={{ borderBottom: 'divider' }}
+            >
+                Hometown Policy.
+            </Label>
+          </a>
+        </Row>
         <Row ml="0" mr="0" mt="1.25rem">
           <Div col="8" pt="6px">
             <Label color="textDark" mr="0.3126rem">
@@ -89,7 +186,7 @@ export default class SignupForm extends Component {
               btnType="primary"
               fontFamily="regular"
               height="42px"
-              disabled={loading}
+              disabled={loading || !policyAccepted}
               fontSize="0.875rem"
             >
               {!loading ? 'SIGN UP' : 'Please wait...' }
@@ -106,6 +203,8 @@ SignupForm.defaultProps = {
   email: '',
   phone: '',
   password: '',
+  gender: '',
+  city: '',
   emailFeedBackError: false,
   emailFeedBackMessage: '',
   nameFeedBackError: PropTypes.bool,
@@ -114,12 +213,20 @@ SignupForm.defaultProps = {
   phoneFeedBackMessage: '',
   passwordFeedBackError: false,
   passwordFeedBackMessage: '',
+  genderFeedBackError: false,
+  genderFeedBackMessage: '',
+  cityFeedBackError: false,
+  cityFeedBackMessage: '',
+  policyAccepted: false,
   onChangeName: () => {},
   onChangeEmail: () => {},
   onChangePhone: () => {},
   onChangePassword: () => {},
   date: () => {},
   onSubmitSignup: () => {},
+  onChangeGender: () => { },
+  onChangeCity: () => { },
+  onChangePolicy: () => { },
   loading: false,
   loginUrl: '',
   phonemandatory: true,
@@ -133,8 +240,18 @@ SignupForm.propTypes = {
   onChangePhone: PropTypes.func,
   onChangePassword: PropTypes.func,
   onSubmitSignup: PropTypes.func,
+  onChangeGender: PropTypes.func,
+  onChangeCity: PropTypes.func,
+  onChangePolicy: PropTypes.func,
   name: PropTypes.string,
   date: PropTypes.func,
+  gender: PropTypes.string,
+  city: PropTypes.string,
+  policyAccepted: PropTypes.bool,
+  genderFeedBackError: PropTypes.bool,
+  genderFeedBackMessage: PropTypes.string,
+  cityFeedBackError: PropTypes.bool,
+  cityFeedBackMessage: PropTypes.string,
   nameFeedBackError: PropTypes.bool,
   nameFeedBackMessage: PropTypes.string,
   email: PropTypes.string,
