@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/Buttons';
-import { FeedBackMessage } from 'components/Label';
+import Div from 'components/Div';
+import { FeedBackMessage, Label } from 'components/Label';
+import Row from 'components/Row';
 import FormInput from './FormInput';
+
 
 export default class ProfileForm extends Component {
   render() {
@@ -11,16 +14,24 @@ export default class ProfileForm extends Component {
       phone,
       fullName,
       gst,
+      gender,
+      city,
       gstFeedBackError,
       gstFeedBackMessage,
       onChangeGST,
       onChangeEmail,
       onChangePhone,
       onChangeFullName,
+      onChangeGender,
+      onChangeCity,
       emailFeedBackError,
       emailFeedBackMessage,
       phoneFeedBackError,
       phoneFeedBackMessage,
+      genderFeedBackError,
+      genderFeedBackMessage,
+      cityFeedBackError,
+      cityFeedBackMessage,
       fullNameFeedBackError,
       fullNameFeedBackMessage,
       dobFeedBackError,
@@ -68,6 +79,66 @@ export default class ProfileForm extends Component {
           feedBackMessage={phoneFeedBackMessage}
         />
         <FormInput
+          label="City"
+          type="text"
+          placeholder=""
+          name="city"
+          onChange={onChangeCity}
+          value={city}
+          feedBackError={cityFeedBackError}
+          feedBackMessage={cityFeedBackMessage}
+        />
+        <Label
+          mb={40}
+          sx={{
+            color: 'textPrimary',
+            fontSize: '17px',
+            lineHeight: '20px',
+            textAlign: 'left'
+          }}
+        >
+          Gender
+        </Label>
+        <Row mb="10px" mt="10px" >
+          <Div col="3" ml="20px">
+            <Div
+              as="input"
+              type="radio"
+              value="male"
+              checked={gender === 'male'}
+              name="gender"
+              mr={10}
+              onChange={onChangeGender}
+            />
+            <Label>Male</Label>
+          </Div>
+          <Div col="3">
+            <Div
+              as="input"
+              type="radio"
+              value="female"
+              checked={gender === 'female'}
+              name="gender"
+              mr={10}
+              onChange={onChangeGender}
+            />
+            <Label>Female</Label>
+          </Div>
+          <Div col="3">
+            <Div
+              as="input"
+              type="radio"
+              value="transgender"
+              checked={gender === 'transgender'}
+              name="gender"
+              mr={10}
+              onChange={onChangeGender}
+            />
+            <Label>Transgender</Label>
+          </Div>
+          {genderFeedBackError && <Label>{genderFeedBackMessage}</Label>}
+        </Row>
+        <FormInput
           label="GST Number"
           type="text"
           placeholder=""
@@ -112,6 +183,8 @@ ProfileForm.defaultProps = {
   phone: '',
   fullName: '',
   gst: '',
+  gender: '',
+  city: '',
   gstFeedBackError: false,
   gstFeedBackMessage: '',
   emailFeedBackError: false,
@@ -120,6 +193,10 @@ ProfileForm.defaultProps = {
   phoneFeedBackMessage: '',
   fullNameFeedBackError: false,
   fullNameFeedBackMessage: '',
+  genderFeedBackError: false,
+  genderFeedBackMessage: '',
+  cityFeedBackError: false,
+  cityFeedBackMessage: '',
   dobFeedBackMessage: '',
   dobFeedBackError: false,
   onChangeEmail: () => {},
@@ -127,6 +204,8 @@ ProfileForm.defaultProps = {
   onChangePhone: () => {},
   onChangeFullName: () => {},
   onSubmitProfile: () => {},
+  onChangeGender: () => { },
+  onChangeCity: () => { },
   date: () => {},
   response: {}
 };
@@ -137,9 +216,13 @@ ProfileForm.propTypes = {
   onChangeFullName: PropTypes.func,
   onSubmitProfile: PropTypes.func,
   onChangeGST: PropTypes.func,
+  onChangeGender: PropTypes.func,
+  onChangeCity: PropTypes.func,
   date: PropTypes.func,
   email: PropTypes.string,
   phone: PropTypes.string,
+  gender: PropTypes.string,
+  city: PropTypes.string,
   fullName: PropTypes.string,
   gst: PropTypes.string,
   gstFeedBackError: PropTypes.bool,
@@ -147,6 +230,10 @@ ProfileForm.propTypes = {
   emailFeedBackError: PropTypes.bool,
   emailFeedBackMessage: PropTypes.string,
   phoneFeedBackError: PropTypes.bool,
+  genderFeedBackError: PropTypes.bool,
+  genderFeedBackMessage: PropTypes.string,
+  cityFeedBackError: PropTypes.bool,
+  cityFeedBackMessage: PropTypes.string,
   phoneFeedBackMessage: PropTypes.string,
   fullNameFeedBackError: PropTypes.bool,
   fullNameFeedBackMessage: PropTypes.string,
