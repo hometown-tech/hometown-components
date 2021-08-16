@@ -99,40 +99,40 @@ export default class ProfileForm extends Component {
         >
           Gender
         </Label>
-        <Row mb="10px" mt="10px" >
-          <Div col="3" ml="20px">
-            <Div
+        <Row mb="10px" mt="10px" ml="1px">
+          <Div col="4">
+            <input
               as="input"
               type="radio"
               value="male"
               checked={gender === 'male'}
               name="gender"
-              mr={10}
               onChange={onChangeGender}
+              style={{ marginRight: '3px' }}
             />
             <Label>Male</Label>
           </Div>
-          <Div col="3">
-            <Div
+          <Div col="4">
+            <input
               as="input"
               type="radio"
               value="female"
               checked={gender === 'female'}
               name="gender"
-              mr={10}
               onChange={onChangeGender}
+              style={{ marginRight: '3px' }}
             />
             <Label>Female</Label>
           </Div>
-          <Div col="3">
-            <Div
+          <Div col="4">
+            <input
               as="input"
               type="radio"
               value="transgender"
               checked={gender === 'transgender'}
               name="gender"
-              mr={10}
               onChange={onChangeGender}
+              style={{ marginRight: '3px' }}
             />
             <Label>Transgender</Label>
           </Div>
