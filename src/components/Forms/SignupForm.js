@@ -83,7 +83,7 @@ export default class SignupForm extends Component {
           feedBackMessage={passwordFeedBackMessage}
         />
         <FormInput
-          label="City"
+          label="City *"
           type="text"
           name="city"
           placeholder=""
@@ -103,64 +103,64 @@ export default class SignupForm extends Component {
             textAlign: 'left'
           }}
         >
-          Gender
+          Gender *
         </Label>
-        <Row my={20} mx={0} mt="5px" mb="5px">
-          <Div col="3" ml="20px">
+        <Row my={20} ml="1px" mt="5px" mb="5px">
+          <Div col="4">
             <Label htmlFor="genderMale">
-              <Div
+              <input
                 as="input"
                 type="radio"
                 value="male"
                 checked={gender === 'male'}
                 name="gender"
                 id="genderMale"
-                mr={10}
                 onChange={onChangeGender}
+                style={{ marginRight: '2px' }}
               />
            Male</Label>
           </Div>
-          <Div col="3">
-            <Div
+          <Div col="4">
+            <input
               as="input"
               type="radio"
               value="female"
               checked={gender === 'female'}
               name="gender"
               id="genderFemale"
-              mr={10}
               onChange={onChangeGender}
+              style={{ marginRight: '2px' }}
             />
             <Label htmlFor="genderFemale">Female</Label>
           </Div>
-          <Div col="3">
-            <Div
+          <Div col="4">
+            <input
               as="input"
               id="transgender"
               type="radio"
               value="transgender"
               checked={gender === 'transgender'}
               name="gender"
-              mr={10}
               onChange={onChangeGender}
+              style={{ marginRight: '2px' }}
             />
             <Label htmlFor="transgender">Transgender</Label>
           </Div>
           {genderFeedBackError && <Label>{genderFeedBackMessage}</Label>}
         </Row>
-        <Row ml="15px">
-          <Div
+        <Row marginTop="10px">
+          <input
             as="input"
             type="checkbox"
             id="readTnc"
             onChange={onChangePolicy}
+            style={{ marginTop: '5px', marginLeft: '17px', marginRight: '5px' }}
           />
           <Label htmlFor="readTnc" />
-          <Label htmlFor="readTnc" textAlign="center" fontSize={16} pl={9}>I have read and agree to </Label>
+          <Label htmlFor="readTnc" fontSize="14px" pl={9}>I have read and agree to </Label>
           <a href="/privacy-policy" target="_blank">
             <Label
-              textAlign="center"
-              fontSize={16}
+              fontSize="14px"
               pl={4}
               pt={1}
               color="primary"
