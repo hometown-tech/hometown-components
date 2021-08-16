@@ -95,7 +95,6 @@ export default class SignupForm extends Component {
         {date}
         {dobFeedBackError && <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
         <Label
-          mb={40}
           sx={{
             color: 'textPrimary',
             fontSize: '17px',
