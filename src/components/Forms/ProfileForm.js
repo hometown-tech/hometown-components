@@ -79,7 +79,7 @@ export default class ProfileForm extends Component {
           feedBackMessage={phoneFeedBackMessage}
         />
         <FormInput
-          label="City *"
+          label="City"
           type="text"
           placeholder=""
           name="city"
@@ -97,7 +97,7 @@ export default class ProfileForm extends Component {
             textAlign: 'left'
           }}
         >
-          Gender *
+          Gender
         </Label>
         <Row mb="10px" mt="10px" ml="1px">
           <Div col="4">
@@ -154,7 +154,7 @@ export default class ProfileForm extends Component {
           height="42px"
           mt="1.5rem"
           disabled={loading || fullNameFeedBackError || emailFeedBackError ||
-           phoneFeedBackError || gstFeedBackError || cityFeedBackError || !gender}
+           phoneFeedBackError || gstFeedBackError}
         >
           {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
         </Button>
@@ -171,7 +171,6 @@ export default class ProfileForm extends Component {
               {(errorMessage.mobile) && 'Invalid Mobile Number'}
               {(errorMessage.full_name) && 'Password should be 8 characters'}
               {(errorMessage.error_message) && 'Something went wrong !'}
-              {(errorMessage.city) && 'City Cannot be Left Empty !'}
             </FeedBackMessage>
           </div>
         }

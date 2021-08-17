@@ -83,7 +83,7 @@ export default class SignupForm extends Component {
           feedBackMessage={passwordFeedBackMessage}
         />
         <FormInput
-          label="City *"
+          label="City"
           type="text"
           name="city"
           placeholder=""
@@ -104,7 +104,7 @@ export default class SignupForm extends Component {
           }}
           style={{ display: 'block' }}
         >
-          Gender *
+          Gender
         </Label>
         <Row my={20} ml="1px" mt="5px" mb="5px">
           <Div col="4">
@@ -187,7 +187,7 @@ export default class SignupForm extends Component {
               btnType="primary"
               fontFamily="regular"
               height="42px"
-              disabled={loading || !policyAccepted || !gender}
+              disabled={loading || !policyAccepted}
               fontSize="0.875rem"
             >
               {!loading ? 'SIGN UP' : 'Please wait...' }
