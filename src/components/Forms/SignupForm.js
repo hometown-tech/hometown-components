@@ -93,15 +93,17 @@ export default class SignupForm extends Component {
           feedBackMessage={cityFeedBackMessage}
         />
         {date}
-        {dobFeedBackError && <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
+        {dobFeedBackError &&
+        <FeedBackMessage type="error">{dobFeedBackMessage}</FeedBackMessage>}
         <Label
           mb={40}
           sx={{
             color: 'textPrimary',
             fontSize: '17px',
             lineHeight: '20px',
-            textAlign: 'left'
+            textAlign: 'left',
           }}
+          style={{ display: 'block' }}
         >
           Gender *
         </Label>
@@ -186,7 +188,7 @@ export default class SignupForm extends Component {
               btnType="primary"
               fontFamily="regular"
               height="42px"
-              disabled={loading || !policyAccepted}
+              disabled={loading || !policyAccepted || !gender}
               fontSize="0.875rem"
             >
               {!loading ? 'SIGN UP' : 'Please wait...' }
