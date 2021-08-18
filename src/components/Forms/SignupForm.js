@@ -17,6 +17,7 @@ export default class SignupForm extends Component {
       password,
       gender,
       city,
+      noDate,
       onChangeName,
       onChangeEmail,
       onChangePhone,
@@ -187,7 +188,7 @@ export default class SignupForm extends Component {
               btnType="primary"
               fontFamily="regular"
               height="42px"
-              disabled={loading || !policyAccepted}
+              disabled={loading || !policyAccepted || !name || !email || !phone || !password || !noDate}
               fontSize="0.875rem"
             >
               {!loading ? 'SIGN UP' : 'Please wait...' }
@@ -219,6 +220,7 @@ SignupForm.defaultProps = {
   cityFeedBackError: false,
   cityFeedBackMessage: '',
   policyAccepted: false,
+  noDate: '',
   onChangeName: () => {},
   onChangeEmail: () => {},
   onChangePhone: () => {},
@@ -269,4 +271,5 @@ SignupForm.propTypes = {
   phonemandatory: PropTypes.bool,
   dobFeedBackMessage: PropTypes.string,
   dobFeedBackError: PropTypes.bool,
+  noDate: PropTypes.string
 };
