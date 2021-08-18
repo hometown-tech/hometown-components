@@ -187,7 +187,7 @@ export default class SignupForm extends Component {
               btnType="primary"
               fontFamily="regular"
               height="42px"
-              disabled={loading || !policyAccepted}
+              disabled={loading || !policyAccepted || !name || !email || !phone || !password}
               fontSize="0.875rem"
             >
               {!loading ? 'SIGN UP' : 'Please wait...' }
