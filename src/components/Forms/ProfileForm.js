@@ -153,7 +153,8 @@ export default class ProfileForm extends Component {
           fontFamily="regular"
           height="42px"
           mt="1.5rem"
-          disabled={loading || fullNameFeedBackError || emailFeedBackError || phoneFeedBackError || gstFeedBackError}
+          disabled={loading || fullNameFeedBackError || emailFeedBackError ||
+           phoneFeedBackError || gstFeedBackError}
         >
           {(response && !loading) ? 'UPDATE PROFILE' : 'Please wait...' }
         </Button>
