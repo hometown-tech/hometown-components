@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import React from 'react';
 import PropTypes from 'prop-types';
 // import styled from 'styled-components';
@@ -53,7 +54,7 @@ class WriteReview extends React.Component {
       addreview: !this.state.addreview
     });
   }
-  handleSubmit(e) {
+  handleSubmit =e => {
     e.preventDefault();
     const { onClickSubmit, catalogId } = this.props;
     const {
