@@ -53,7 +53,7 @@ class WriteReview extends React.Component {
       addreview: !this.state.addreview
     });
   }
-  handleSubmit =e => {
+  handleSubmit(e) {
     e.preventDefault();
     const { onClickSubmit, catalogId } = this.props;
     const {
