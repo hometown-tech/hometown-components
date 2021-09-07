@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Row from 'components/Row';
 import Img from 'components/Img';
-import Button from 'components/Buttons';
+// import Button from 'components/Buttons';
 import Div from 'components/Div';
 import { Link } from 'react-router-dom';
 import ImageShimmer from 'components/ImageShimmer';
@@ -55,7 +55,7 @@ const ColorOptions = styled(Div)`
 const urlName = name => name.split(' ').join('-').toLowerCase();
 
 const ColorOption = ({
-  data, toggleShowMoreColorProducts, showmorecolorproducts, currentImage
+  data, showmorecolorproducts, currentImage
 }) => (
   <Row mr="0" ml="0" mb="0px" mt="1rem" display="block">
     <ColorOptions active={!showmorecolorproducts}>
@@ -109,13 +109,13 @@ const ColorOption = ({
 );
 ColorOption.defaultProps = {
   showmorecolorproducts: true,
-  toggleShowMoreColorProducts: () => {},
+  // toggleShowMoreColorProducts: () => {},
   currentImage: ''
 };
 ColorOption.propTypes = {
   data: PropTypes.array.isRequired,
   showmorecolorproducts: PropTypes.bool,
-  toggleShowMoreColorProducts: PropTypes.func,
+  // toggleShowMoreColorProducts: PropTypes.func,
   currentImage: PropTypes.string
 };
 
