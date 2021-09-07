@@ -76,14 +76,22 @@ export default class ImageShimmer extends Component {
 
   render() {
     const {
-      children, src, height, overflow
+      children, src, height, overflow, borderradius, mb, borderCircle
     } = this.props;
     const { isLoaded, error } = this.state;
     if (!children || typeof children !== 'function') {
       throw new Error('ImageShimmer requires a function as its only child');
     }
     return (
-      <ImagePlaceHolderWrapper overflow={overflow} height={height}>
+      <ImagePlaceHolderWrapper
+        overflow={overflow}
+        height={height}
+        style={{
+          borderRadius: borderradius,
+          marginBottom: mb,
+          border: borderCircle
+        }}
+      >
         { !isLoaded && !error && <ImagePlaceHolder /> }
         { isLoaded && children(src, error) }
         { !isLoaded && error && children(defaultImage, error) }
@@ -93,9 +101,15 @@ export default class ImageShimmer extends Component {
 }
 
 ImageShimmer.defaultProps = {
-  overflow: 'auto'
+  overflow: 'auto',
+  borderradius: '',
+  mb: '',
+  borderCircle: ''
 };
 
 ImageShimmer.propTypes = {
-  overflow: PropTypes.string
+  overflow: PropTypes.string,
+  borderradius: PropTypes.string,
+  mb: PropTypes.string,
+  borderCircle: PropTypes.string
 };

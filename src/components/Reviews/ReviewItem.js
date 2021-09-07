@@ -34,9 +34,6 @@ const ReviewsItems = ({ review, col, pr }) =>
   // const color = judgeColor(review.options[0].option_value);
   (
     <ReviewsItemsWrapper col={col} display="block" m="0" mb="0.9375rem" pr={pr} pb="0.625rem">
-      <HeadingH6 fontSize="0.875rem" color="secondary" mb="0" pb="5px" mt="0" fontFamily="light">
-        {review.nickname || review.customer_name || null}
-      </HeadingH6>
       <Div>
         <ReactStars
           count={5}
@@ -49,11 +46,11 @@ const ReviewsItems = ({ review, col, pr }) =>
         />
         <Span
           className="ratingsCount"
-          fontSize="0.875rem"
+          fontSize="1rem"
           color="rgba(0, 0, 0, 0.6)"
           va="super"
           ml="5px"
-        >({review.options[0].option_value || null})</Span>
+        >{review.options[0].option_value || null}/5</Span>
       </Div>
       <Div>
         <Text
@@ -63,6 +60,19 @@ const ReviewsItems = ({ review, col, pr }) =>
           color="rgba(0, 0, 0, 0.7)"
           fontSize="0.75rem"
         >{review.detail || null}</Text>
+      </Div>
+      <Div>
+        <HeadingH6
+          fontSize="1rem"
+          color="secondary"
+          mb="0"
+          pb="5px"
+          mt="1rem"
+          fontFamily="light"
+          style={{ overflow: 'visible', whiteSpace: 'normal' }}
+        >
+          {review.nickname || review.customer_name || null}
+        </HeadingH6>
       </Div>
     </ReviewsItemsWrapper>
   );

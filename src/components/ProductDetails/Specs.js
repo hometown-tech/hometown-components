@@ -5,8 +5,8 @@ import Section from 'components/Section';
 import SpecList from 'components/ProductDetails/SpecList';
 
 const Specs = ({ specs }) => (
-  <Section mb="1.5rem" p="0">
-    <Container type="container" pr="1rem" pl="1rem">
+  <Section mb="0px" p="0">
+    <Container type="container" pr="0rem" pl="0rem">
       {specs.map((spec, index) => (
         <SpecList list={spec} key={String(index)} />
       ))}

@@ -1,35 +1,36 @@
-import React, { Fragment } from 'react';
+// import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Heading from 'components/Heading';
-import HeadingH5 from 'components/HeadingH5';
+// import HeadingH5 from 'components/HeadingH5';
 import Row from 'components/Row';
-import Span from 'components/Span';
+// import Span from 'components/Span';
 import Section from 'components/Section';
-import Div from 'components/Div';
-import ReactStars from 'react-stars';
+// import Div from 'components/Div';
+// import ReactStars from 'react-stars';
 
 const TitlePrice = ({
   name,
   brand,
-  price,
-  discPrice,
-  savingsRs,
-  savingsPercentage,
-  count,
-  ratings,
-  onClickReviews,
-  offerDetails,
-  savingTotal
-}) => {
-  const isOfferExist = !!offerDetails.offerPrice && !!offerDetails.couponCode;
-  const {
-    offerPrice = '',
-    couponCode = '',
-    couponPercentageValue = '',
-    offerAmount = ''
-  } = offerDetails;
-  return (
+  // price,
+  // discPrice,
+  // savingsRs,
+  // savingsPercentage,
+  // count,
+  // ratings,
+  // onClickReviews,
+  // offerDetails,
+  // savingTotal
+}) =>
+  // const isOfferExist = !!offerDetails.offerPrice && !!offerDetails.couponCode;
+  // const {
+  //   offerPrice = '',
+  //   couponCode = '',
+  //   couponPercentageValue = '',
+  //   offerAmount = ''
+  // } = offerDetails;
+  (
     <Section mb="0.3125rem" p="0">
       <Container type="container" pr="1rem" pl="1rem">
         <Row display="block" mr="0" ml="0">
@@ -59,7 +60,7 @@ const TitlePrice = ({
           >
             By {brand}
           </Heading>}
-          <HeadingH5
+          {/* <HeadingH5
             itemProp="offers"
             itemScope
             itemType="http://schema.org/Offer"
@@ -242,10 +243,10 @@ const TitlePrice = ({
                     </Fragment>
                   </HeadingH5>
                 </Div>
-              </Div>}
-              {!!isOfferExist && !(price !== discPrice) && <Div>
-                {/* this will be displayed when no discPrice but offerPrice */}
-                <Div>
+              </Div>} */}
+          {/* {!!isOfferExist && !(price !== discPrice) && <Div> */}
+          {/* this will be displayed when no discPrice but offerPrice */}
+          {/* <Div>
                   <Span
                     itemProp="priceCurrency"
                     content="INR"
@@ -324,39 +325,38 @@ const TitlePrice = ({
                 </Row>
               }
             </Div>
-          </Row>
+          </Row> */}
         </Row>
       </Container>
     </Section>
   );
-};
 
 TitlePrice.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
-  price: PropTypes.string,
-  discPrice: PropTypes.string,
-  savingsPercentage: PropTypes.string,
-  savingsRs: PropTypes.string,
-  savingTotal: PropTypes.number,
-  ratings: PropTypes.number,
-  count: PropTypes.number,
-  onClickReviews: PropTypes.func,
-  offerDetails: PropTypes.objectOf(PropTypes.any)
+  // price: PropTypes.string,
+  // discPrice: PropTypes.string,
+  // savingsPercentage: PropTypes.string,
+  // savingsRs: PropTypes.string,
+  // savingTotal: PropTypes.number,
+  // ratings: PropTypes.number,
+  // count: PropTypes.number,
+  // onClickReviews: PropTypes.func,
+  // offerDetails: PropTypes.objectOf(PropTypes.any)
 };
 
 TitlePrice.defaultProps = {
-  savingTotal: 0,
+  // savingTotal: 0,
   name: '',
   brand: '',
-  price: '',
-  discPrice: '',
-  savingsPercentage: '',
-  savingsRs: '',
-  count: 0,
-  ratings: 0,
-  onClickReviews: () => {},
-  offerDetails: {}
+  // price: '',
+  // discPrice: '',
+  // savingsPercentage: '',
+  // savingsRs: '',
+  // count: 0,
+  // ratings: 0,
+  // onClickReviews: () => {},
+  // offerDetails: {}
 };
 
 export default TitlePrice;

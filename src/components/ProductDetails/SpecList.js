@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import Div from 'components/Div';
 import Row from 'components/Row';
 import Button from 'components/Buttons';
+import Img from 'components/Img';
 import Spec from 'components/ProductDetails/Spec';
+
+const downArrow = require('../../static/downArrow.png');
 
 const SpecRow = styled(Row)`
   box-sizing: border-box;
@@ -12,6 +15,11 @@ const SpecRow = styled(Row)`
   display: block;
   clear: both;
   display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: #F9F9F9;
+  border: 1px solid #D4D4D4;
 `;
 
 const SpecHeading = styled.h4`
@@ -25,10 +33,8 @@ const SpecHeading = styled.h4`
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
-  background-color: #f5f5f5;
-  box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 15px 20px;
-  border: 1px solid #f5f5f5;
+  border: 1px solid #D4D4D4;
 `;
 
 const SpecListWrapper = styled.div`
@@ -37,8 +43,6 @@ const SpecListWrapper = styled.div`
   float: left;
   display: initial;
   box-sizing: border-box;
-  background-color: #f5f5f5;
-  box-shadow: 7px 7px 14px -9px rgba(124,122,122,0.5);
   padding: 1rem 1.25rem 0.375rem;
   margin-top: 1px;
   border: 1px solid #f5f5f5;
@@ -59,31 +63,38 @@ class SpecList extends Component {
     const specName = Object.keys(list)[0];
     const values = Object.values(list)[0];
     return (
-      <SpecRow display="block" m="0" mb="0.625rem">
-        <Div col="12" mb="0">
-          <SpecHeading onClick={this.handleOnclick}>
-            {specName}
-            <Button
-              btnType="custom"
-              bg="transparent"
-              border="none"
-              p="0"
-              fl="right"
-              fontSize="1.25rem"
-              fontFamily="light"
-              lh="0"
-              height="18px"
-              mt="-4px"
-            >{show ? '-' : '+'}</Button>
-          </SpecHeading>
-          {show && <SpecListWrapper p="1rem" pb="0">
-            { values.map((eachSpec, specIndex) => (
-              <Spec spec={eachSpec} key={String(specIndex)} />
-            )) }
-          </SpecListWrapper>
-          }
-        </Div>
-      </SpecRow>
+      <div>
+        { specName !== 'Details' ? (
+          <SpecRow display="block" m="0" mb="0rem">
+            <Div col="12" mb="0">
+              <SpecHeading onClick={this.handleOnclick}>
+                {specName}
+                <Button
+                  btnType="custom"
+                  bg="transparent"
+                  border="none"
+                  p="0"
+                  fl="right"
+                  fontSize="1.25rem"
+                  fontFamily="light"
+                  lh="0"
+                  height="18px"
+                  mt="-4px"
+                >
+                  {/* {show ? '-' : '+'} */}
+                  <Img src={downArrow} style={{ width: '10px' }} alt="Down arrow" />
+                </Button>
+              </SpecHeading>
+              {show && <SpecListWrapper p="1rem" pb="0">
+                { values.map((eachSpec, specIndex) => (
+                  <Spec spec={eachSpec} key={String(specIndex)} />
+                )) }
+              </SpecListWrapper>
+              }
+            </Div>
+          </SpecRow>
+        ) : null}
+      </div>
     );
   }
 }

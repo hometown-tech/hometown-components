@@ -26,11 +26,21 @@ const ImgWrapper = styled.div`
   background: #FFF;
   position: relative;
   box-sizing: border-box;
-  width: 60px;
-  height: 61px;
-  margin-right: 0.3125rem;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
   margin-bottom: 0.3125rem;
-  border: 1px solid rgba(221, 221, 221, 0.38);
+`;
+
+const CurrentImgWrapper = styled.div`
+  background: #FFF;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.3125rem;
 `;
 
 const ColorOptions = styled(Div)`
@@ -45,22 +55,40 @@ const ColorOptions = styled(Div)`
 const urlName = name => name.split(' ').join('-').toLowerCase();
 
 const ColorOption = ({
-  data, toggleShowMoreColorProducts, showmorecolorproducts
+  data, toggleShowMoreColorProducts, showmorecolorproducts, currentImage
 }) => (
-  <Row mr="0" ml="0" mb="1rem" display="block">
+  <Row mr="0" ml="0" mb="0px" mt="1rem" display="block">
     <ColorOptions active={!showmorecolorproducts}>
+      <CurrentImgWrapper>
+        <ImageShimmer
+          src={`${currentImage}`}
+          height="40px"
+          borderradius="50%"
+          mb="-4px"
+          borderCircle="2px solid #707070"
+        >
+          {imageURL => (<ProductImg
+            src={imageURL}
+            alt="Current product"
+            width="60px"
+          />)}
+        </ImageShimmer>
+        {/* <ProductImg src={currentImage} alt="current Image" width="70px" /> */}
+      </CurrentImgWrapper>
       {data.map((item, index) => (
         <LinkCustom
           to={`/${urlName(item.meta.name)}/sku/${item.groupedattributes.sku}`}
           key={String(index)}
         >
           <ImgWrapper>
-            <ImageShimmer src={`${item.image}.jpg`} height="60px">
-              {imageURL => (<ProductImg
-                src={imageURL}
-                alt={item.meta.name}
-                width="60px"
-              />)}
+            <ImageShimmer src={`${item.swatch_image}`} height="30px" borderradius="50%">
+              {imageURL => (
+                <ProductImg
+                  src={imageURL}
+                  alt={item.meta.name}
+                  width="60px"
+                />
+              )}
             </ImageShimmer>
           </ImgWrapper>
         </LinkCustom>
@@ -81,13 +109,14 @@ const ColorOption = ({
 );
 ColorOption.defaultProps = {
   showmorecolorproducts: true,
-  toggleShowMoreColorProducts: () => {}
+  toggleShowMoreColorProducts: () => {},
+  currentImage: ''
 };
 ColorOption.propTypes = {
   data: PropTypes.array.isRequired,
   showmorecolorproducts: PropTypes.bool,
   toggleShowMoreColorProducts: PropTypes.func,
-
+  currentImage: PropTypes.string
 };
 
 export default ColorOption;

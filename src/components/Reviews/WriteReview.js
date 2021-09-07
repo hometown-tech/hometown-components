@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import Div from 'components/Div';
 import Row from 'components/Row';
 import Button from 'components/Buttons';
-import Theme from 'components/Theme';
+import Heading from 'components/Heading';
+// import Theme from 'components/Theme';
 import { Label } from 'components/Label';
 import ReactStars from 'react-stars';
 import FormInput from '../Forms/FormInput';
 
-const WriteReviewBtn = styled(Button)`
-  &:hover {
-    opacity: 0.8;
-  }
-`;
+// const WriteReviewBtn = styled(Button)`
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// `;
 
 class WriteReview extends React.Component {
   state={
@@ -78,10 +79,19 @@ class WriteReview extends React.Component {
     } = this.state;
 
     return (
-      <Row display="block" mt="0.625rem" mb="0.625rem" mr="1rem" ml="1rem">
+      <Row
+        display="block"
+        pt="0.625rem"
+        mb="0.625rem"
+        mr="2rem"
+        ml="2rem"
+        pb="1rem"
+        style={{ borderBottom: '1px solid grey' }}
+      >
         <Div>
-          <Label color="textExtraLight">Already bought this product?</Label>
-          <WriteReviewBtn
+          {/* <Label color="textExtraLight">Already bought this product?</Label> */}
+          <Heading color="#666666" fontSize="1rem" >Write a Review</Heading>
+          {/* <WriteReviewBtn
             onClick={this.toggleAddReview}
             btnType="primary"
             color={Theme.colors.primary}
@@ -90,26 +100,17 @@ class WriteReview extends React.Component {
             p="0.75rem 1rem"
             ml="0.625rem"
             className="btn-primary"
-          >Write a Review</WriteReviewBtn>
+          >Write a Review</WriteReviewBtn> */}
           {(addreview) &&
           <form onSubmit={this.handleSubmit}>
             <Div col={col} mt="0.5rem">
               <Div mb="0.3125rem">
-                <Label>Rating</Label>
-                <ReactStars
-                  count={5}
-                  onChange={this.ratingChanged}
-                  size={20}
-                  value={this.state.rating}
-                  half={false}
-                  color2="#ffd700"
-                />
-              </Div>
-              <Div mb="0.3125rem">
                 <FormInput
-                  label="Name"
+                  // label="Name"
+                  style={{ padding: '1rem', borderRadius: '5px' }}
+                  height="auto"
                   type="text"
-                  placeholder=""
+                  placeholder="Name"
                   name="name"
                   value={name}
                   feedBackError={nameError}
@@ -120,7 +121,10 @@ class WriteReview extends React.Component {
               <Div mb="0.3125rem">
                 <FormInput
                   type="textarea"
-                  label="Review"
+                  // label="Review"
+                  style={{ padding: '1rem', fontSize: '14px', borderRadius: '5px' }}
+                  height="auto"
+                  placeholder="Review"
                   rows="5"
                   name="review"
                   value={review}
@@ -129,17 +133,31 @@ class WriteReview extends React.Component {
                   onChange={this.handleChange}
                 />
               </Div>
-              <Div>
-                <Button
-                  type="submit"
-                  btnType="primary"
-                  size="large"
-                  fontFamily="regular"
-                  fontSize="0.875em"
-                  height="42px"
-                  lh="2"
-                >SUBMIT</Button>
-              </Div>
+              <Row justifyContent="space-between">
+                <Div mb="0.3125rem" style={{ display: 'flex', alignItems: 'center', width: '40%' }}>
+                  <Label mr="0.5rem" color="#999999" >Rating</Label>
+                  <ReactStars
+                    count={5}
+                    onChange={this.ratingChanged}
+                    size={20}
+                    value={this.state.rating}
+                    half={false}
+                    color2="#ffd700"
+                  />
+                </Div>
+                <Div style={{ width: '40%' }}>
+                  <Button
+                    type="submit"
+                    btnType="primary"
+                    size="large"
+                    fontFamily="regular"
+                    fontSize="0.875em"
+                    height="42px"
+                    lh="2"
+                    style={{ backgroundColor: '#E9916B', width: '100%' }}
+                  >SUBMIT</Button>
+                </Div>
+              </Row>
             </Div>
           </form>
           }
