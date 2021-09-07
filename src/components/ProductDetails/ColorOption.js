@@ -94,7 +94,7 @@ const ColorOption = ({
         </LinkCustom>
       ))}
     </ColorOptions>
-    {data.length > 5 && <Div>
+    {/* {data.length > 5 && <Div>
       <Button
         btnType="link"
         size="block"
@@ -104,7 +104,7 @@ const ColorOption = ({
         pr="64px"
         onClick={toggleShowMoreColorProducts}
       >{showmorecolorproducts ? 'Show More Products' : 'Show Less'}</Button>
-    </Div>}
+    </Div>} */}
   </Row>
 );
 ColorOption.defaultProps = {
