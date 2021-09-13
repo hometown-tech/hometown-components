@@ -36,7 +36,7 @@ const TitlePrice = ({
         <Row display="block" mr="0" ml="0">
           <Heading
             itemProp="name"
-            fontSize="14px"
+            fontSize="16px"
             color="textDark"
             mb="0"
             mt="5px"
@@ -49,7 +49,7 @@ const TitlePrice = ({
           </Heading>
           {brand && <Heading
             itemProp="name"
-            fontSize="14px"
+            fontSize="12px"
             color="textLight"
             mb="0"
             mt="0"

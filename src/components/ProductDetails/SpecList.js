@@ -58,7 +58,7 @@ class SpecList extends Component {
     });
   }
   render() {
-    const { list } = this.props;
+    const { list, prodDetail } = this.props;
     const { show } = this.state;
     const specName = Object.keys(list)[0];
     const values = Object.values(list)[0];
@@ -85,7 +85,7 @@ class SpecList extends Component {
                   <Img src={downArrow} style={{ width: '10px' }} alt="Down arrow" />
                 </Button>
               </SpecHeading>
-              {show && <SpecListWrapper p="1rem" pb="0">
+              {show && prodDetail && <SpecListWrapper p="1rem" pb="0">
                 { values.map((eachSpec, specIndex) => (
                   <Spec spec={eachSpec} key={String(specIndex)} />
                 )) }
@@ -101,6 +101,7 @@ class SpecList extends Component {
 
 SpecList.propTypes = {
   list: PropTypes.array.isRequired,
+  prodDetail: PropTypes.bool.isRequired
 };
 
 export default SpecList;
