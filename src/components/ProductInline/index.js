@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Row from 'components/Row';
 import Div from 'components/Div';
+import Text from 'components/Text';
 import Heading from 'components/Heading';
 import Img from 'components/Img';
 import ImageShimmerMobile from 'components/ImageShimmerMobile';
@@ -10,7 +11,7 @@ import { Label } from 'components/Label';
 import Theme from 'components/Theme';
 
 const ProductInline = ({
-  name, image, specialPrice, unitPrice, qty, productURL, formatAmount,
+  name, image, specialPrice, unitPrice, qty, productURL, formatAmount, offerMessage
 }) => (
   <Div mr="0" ml="0" mb="0.3125rem">
     <Row display="block" mr="0" ml="0">
@@ -46,7 +47,7 @@ const ProductInline = ({
                   <br />
                 </Fragment>
               )}
-              <Label color="primary" fontSize="1.25rem" mt="0">
+              <Label color="primary" fontSize="1.25rem" mt="0" mb="0px">
                 Rs.
                 {specialPrice === 0
                   ? formatAmount(Number(unitPrice) * Number(qty))
@@ -54,6 +55,21 @@ const ProductInline = ({
               </Label>
             </Div>
           </Div>
+          {offerMessage ? (
+            <Div>
+              <Text
+                mt="0px"
+                mb="0px"
+                color="orangered"
+                fontSize="1rem"
+                style={{
+                  fontWeight: 'bold'
+                }}
+              >
+                {offerMessage}
+              </Text>
+            </Div>
+          ) : null}
         </Div>
       </Link>
     </Row>
@@ -67,6 +83,7 @@ ProductInline.defaultProps = {
   unitPrice: '',
   qty: 0,
   productURL: '',
+  offerMessage: '',
   formatAmount: () => {},
 };
 
@@ -78,6 +95,7 @@ ProductInline.propTypes = {
   qty: PropTypes.number,
   productURL: PropTypes.string,
   formatAmount: PropTypes.func,
+  offerMessage: PropTypes.string
 };
 
 export default ProductInline;
