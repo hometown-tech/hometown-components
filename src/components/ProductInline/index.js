@@ -61,7 +61,7 @@ const ProductInline = ({
                 mt="0px"
                 mb="0px"
                 color="orangered"
-                fontSize="1rem"
+                fontSize="0.75rem"
                 style={{
                   fontWeight: 'bold'
                 }}
