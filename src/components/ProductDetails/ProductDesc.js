@@ -71,9 +71,12 @@ const ProductDesc = ({ desc, details }) => {
             />
 
             <SpecListWrapper p="1rem" pb="0">
-              { details.map((eachSpec, specIndex) => (
-                <Spec spec={eachSpec} key={String(specIndex)} />
-              )) }
+              {/* eslint-disable */}
+              { details.map((eachSpec, specIndex) => {
+                if (eachSpec.value) {
+                  return (<Spec spec={eachSpec} key={String(specIndex)} />);
+                }
+              })}
             </SpecListWrapper>
 
           </Div>
